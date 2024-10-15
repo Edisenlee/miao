@@ -9,6 +9,10 @@ DOMAIN-SUFFIX,hao123.com
 # 域名关键字匹配
 DOMAIN-KEYWORD,baidu
 
+#edu
+DOMAIN-KEYWORD,jlu
+DOMAIN-KEYWORD,jdyy
+
 # IP段匹配
 IP-CIDR,219.146.1.66/32,no-resolve
 
@@ -35,6 +39,9 @@ DOMAIN-SUFFIX,qhstatic.com
 DOMAIN-SUFFIX,qhupdate.com
 DOMAIN-SUFFIX,so.com
 
+#jlu
+DOMAIN-SUFFIX,jlu.edu.cn
+DOMAIN-SUFFIX,vpn.jlu.edu.cn
 
 # 58
 DOMAIN-SUFFIX,58.com
