@@ -1,6 +1,8 @@
 # 内容：自定义的需要代理的网站
 # 域名关键字匹配
 DOMAIN-KEYWORD,broadcom
+DOMAIN-KEYWORD,bioconductor
 
 # 域名后缀匹配
 DOMAIN-SUFFIX,broadcom.com
+DOMAIN-SUFFIX,bioconductor.org
