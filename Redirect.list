@@ -11,20 +11,28 @@ DOMAIN-SUFFIX,poe.com
 
 #ip匹配
 # Google服务器 (美国)
-IP-CIDR,142.251.215.238/32,no-resolve
-IP-CIDR,34.36.57.103/32,no-resolve
-IP-CIDR,35.227.197.221/32,no-resolve
-IP-CIDR,35.224.165.216/32,no-resolve
-IP-CIDR,35.220.128.127/32,no-resolve
-IP-CIDR,34.102.213.72/32,no-resolve
-IP-CIDR,35.241.15.198/32,no-resolve
+IP-CIDR,142.251.215.238/32,no-resolve    # Google (多次出现)
+IP-CIDR,34.36.57.103/32,no-resolve       # Google Cloud 
+IP-CIDR,34.96.128.111/32,no-resolve      # Google Cloud
+IP-CIDR,34.102.213.72/32,no-resolve      # Google Cloud
+IP-CIDR,35.201.104.59/32,no-resolve      # Google Cloud
+IP-CIDR,35.220.128.127/32,no-resolve     # Google Cloud
+IP-CIDR,35.224.165.216/32,no-resolve     # Google Cloud
+IP-CIDR,35.227.197.221/32,no-resolve     # Google Cloud
+IP-CIDR,35.227.202.136/32,no-resolve     # Google Cloud
+IP-CIDR,35.241.15.198/32,no-resolve      # Google Cloud
+IP-CIDR,130.211.17.170/32,no-resolve     # Google Cloud
 
 # Amazon AWS服务器 (美国)
-IP-CIDR,13.224.189.18/32,no-resolve
-IP-CIDR,35.174.127.31/32,no-resolve
-IP-CIDR,34.237.73.95/32,no-resolve
-IP-CIDR,3.229.223.57/32,no-resolve
-IP-CIDR,52.207.122.56/32,no-resolve 
+IP-CIDR,13.224.189.18/32,no-resolve      # AWS
+IP-CIDR,34.237.73.95/32,no-resolve       # AWS 
+IP-CIDR,35.174.127.31/32,no-resolve      # AWS
+IP-CIDR,3.229.223.57/32,no-resolve       # AWS
+IP-CIDR,52.207.122.56/32,no-resolve      # AWS
+IP-CIDR,99.83.231.61/32,no-resolve       # AWS hcfy.ai服务
+IP-CIDR,140.82.113.21/32,no-resolve      # GitHub - AWS
+IP-CIDR,140.82.114.21/32,no-resolve      # GitHub - AWS
+IP-CIDR,140.82.114.22/32,no-resolve      # GitHub - AWS
 
 # 欧洲服务器
 IP-CIDR,93.46.8.90/32,no-resolve      # 意大利米兰
@@ -35,12 +43,27 @@ IP-CIDR,193.182.111.12/32,no-resolve  # 瑞典
 IP-CIDR,84.16.67.12/32,no-resolve     # 德国
 IP-CIDR,45.83.234.123/32,no-resolve   # 德国
 
-## 其他
-IP-CIDR,185.199.108.154/32,no-resolve # GitHub CDN
-IP-CIDR,162.159.137.105/32,no-resolve   # Cloudflare CDN
-IP-CIDR,162.159.138.105/32,no-resolve   # Cloudflare CDN
-IP-CIDR,159.100.4.222/32,no-resolve     # 荷兰 LeaseWeb
-IP-CIDR,23.32.102.29/32,no-resolve      # Akamai CDN
+
+# CDN服务商
+IP-CIDR,162.159.137.105/32,no-resolve    # Cloudflare CDN
+IP-CIDR,162.159.138.105/32,no-resolve    # Cloudflare CDN
+IP-CIDR,23.32.102.29/32,no-resolve       # Akamai CDN
+IP-CIDR,185.199.108.154/32,no-resolve    # GitHub CDN
+IP-CIDR,185.199.111.154/32,no-resolve    # GitHub CDN
+
+# 欧洲数据中心/服务器
+IP-CIDR,93.46.8.90/32,no-resolve         # 意大利米兰
+IP-CIDR,217.23.1.103/32,no-resolve       # 荷兰 LeaseWeb
+IP-CIDR,159.100.4.222/32,no-resolve      # 荷兰 LeaseWeb
+IP-CIDR,157.90.33.122/32,no-resolve      # Hetzner 德国
+IP-CIDR,178.63.248.54/32,no-resolve      # Hetzner 德国
+IP-CIDR,84.200.39.196/32,no-resolve      # Synology
+
+# NTP时间服务器
+IP-CIDR,193.182.111.12/32,no-resolve     # 瑞典
+IP-CIDR,84.16.67.12/32,no-resolve        # 德国
+IP-CIDR,45.83.234.123/32,no-resolve      # 德国
+IP-CIDR,209.51.161.238/32,no-resolve     # NTP
 
 
 
