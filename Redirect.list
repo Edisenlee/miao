@@ -7,3 +7,4 @@ DOMAIN-KEYWORD,poe
 # 域名后缀匹配
 DOMAIN-SUFFIX,broadcom.com
 DOMAIN-SUFFIX,bioconductor.org
+DOMAIN-SUFFIX,poe.com
