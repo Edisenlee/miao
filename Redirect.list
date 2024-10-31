@@ -3,11 +3,13 @@
 DOMAIN-KEYWORD,broadcom
 DOMAIN-KEYWORD,bioconductor
 DOMAIN-KEYWORD,poe
+DOMAIN-KEYWORD,github
 
 # 域名后缀匹配
 DOMAIN-SUFFIX,broadcom.com
 DOMAIN-SUFFIX,bioconductor.org
 DOMAIN-SUFFIX,poe.com
+DOMAIN-SUFFIX,github.com
 
 #ip匹配
 # Google服务器 (美国)
@@ -65,6 +67,23 @@ IP-CIDR,84.16.67.12/32,no-resolve        # 德国
 IP-CIDR,45.83.234.123/32,no-resolve      # 德国
 IP-CIDR,209.51.161.238/32,no-resolve     # NTP
 
+#youtube
+IP-CIDR,142.251.215.238/32,no-resolve    # Google服务器
+IP-CIDR,216.58.206.78/32,no-resolve      # Google/YouTube
+IP-CIDR,172.217.18.10/32,no-resolve      # Google/YouTube
+IP-CIDR,199.59.148.20/32,no-resolve      # YouTube 专用
+IP-CIDR,142.250.185.174/32,no-resolve    # YouTube 内容
+IP-CIDR,142.250.186.142/32,no-resolve    # YouTube 内容
+IP-CIDR,142.250.185.234/32,no-resolve    # YouTube API
+IP-CIDR,142.250.186.42/32,no-resolve     # YouTube 数据
+
+# YouTube CDN/缓存服务器
+IP-CIDR,31.13.94.41/32,no-resolve        # Facebook CDN (YouTube使用)
+IP-CIDR,8.7.198.46/32,no-resolve         # YouTube CDN
+IP-CIDR,59.24.3.174/32,no-resolve        # YouTube 亚太区缓存
+
+# YouTube相关API和服务
+IP-CIDR,74.125.71.188/32,no-resolve      # Google YouTube API
 
 
 
