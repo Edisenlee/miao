@@ -17,10 +17,14 @@ IP-CIDR,35.227.197.221/32,no-resolve
 IP-CIDR,35.224.165.216/32,no-resolve
 IP-CIDR,35.220.128.127/32,no-resolve
 IP-CIDR,34.102.213.72/32,no-resolve
+IP-CIDR,35.241.15.198/32,no-resolve
 
 # Amazon AWS服务器 (美国)
 IP-CIDR,13.224.189.18/32,no-resolve
 IP-CIDR,35.174.127.31/32,no-resolve
+IP-CIDR,34.237.73.95/32,no-resolve
+IP-CIDR,3.229.223.57/32,no-resolve
+IP-CIDR,52.207.122.56/32,no-resolve 
 
 # 欧洲服务器
 IP-CIDR,93.46.8.90/32,no-resolve      # 意大利米兰
@@ -30,3 +34,22 @@ IP-CIDR,217.23.1.103/32,no-resolve    # 荷兰阿姆斯特丹
 IP-CIDR,193.182.111.12/32,no-resolve  # 瑞典
 IP-CIDR,84.16.67.12/32,no-resolve     # 德国
 IP-CIDR,45.83.234.123/32,no-resolve   # 德国
+
+## 其他
+IP-CIDR,185.199.108.154/32,no-resolve # GitHub CDN
+IP-CIDR,162.159.137.105/32,no-resolve   # Cloudflare CDN
+IP-CIDR,162.159.138.105/32,no-resolve   # Cloudflare CDN
+IP-CIDR,159.100.4.222/32,no-resolve     # 荷兰 LeaseWeb
+IP-CIDR,23.32.102.29/32,no-resolve      # Akamai CDN
+
+
+
+
+
+
+
+
+
+
+
+
