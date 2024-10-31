@@ -8,3 +8,25 @@ DOMAIN-KEYWORD,poe
 DOMAIN-SUFFIX,broadcom.com
 DOMAIN-SUFFIX,bioconductor.org
 DOMAIN-SUFFIX,poe.com
+
+#ip匹配
+# Google服务器 (美国)
+IP-CIDR,142.251.215.238/32,no-resolve
+IP-CIDR,34.36.57.103/32,no-resolve
+IP-CIDR,35.227.197.221/32,no-resolve
+IP-CIDR,35.224.165.216/32,no-resolve
+IP-CIDR,35.220.128.127/32,no-resolve
+IP-CIDR,34.102.213.72/32,no-resolve
+
+# Amazon AWS服务器 (美国)
+IP-CIDR,13.224.189.18/32,no-resolve
+IP-CIDR,35.174.127.31/32,no-resolve
+
+# 欧洲服务器
+IP-CIDR,93.46.8.90/32,no-resolve      # 意大利米兰
+IP-CIDR,217.23.1.103/32,no-resolve    # 荷兰阿姆斯特丹
+
+# NTP时间服务器 (欧洲)
+IP-CIDR,193.182.111.12/32,no-resolve  # 瑞典
+IP-CIDR,84.16.67.12/32,no-resolve     # 德国
+IP-CIDR,45.83.234.123/32,no-resolve   # 德国
