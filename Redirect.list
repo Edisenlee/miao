@@ -4,12 +4,16 @@ DOMAIN-KEYWORD,broadcom
 DOMAIN-KEYWORD,bioconductor
 DOMAIN-KEYWORD,poe
 DOMAIN-KEYWORD,github
+DOMAIN-KEYWORD,youtube
+DOMAIN-KEYWORD,ytimg
 
 # 域名后缀匹配
-DOMAIN-SUFFIX,broadcom.com
-DOMAIN-SUFFIX,bioconductor.org
-DOMAIN-SUFFIX,poe.com
-DOMAIN-SUFFIX,github.com
+DOMAIN-KEYWORD,broadcom
+DOMAIN-KEYWORD,bioconductor
+DOMAIN-KEYWORD,poe
+DOMAIN-KEYWORD,github
+DOMAIN-KEYWORD,youtube
+DOMAIN-KEYWORD,ytimg
 
 #ip匹配
 # Google服务器 (美国)
