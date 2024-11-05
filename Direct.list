@@ -17,6 +17,7 @@ DOMAIN-KEYWORD,ebi
 #edu
 DOMAIN-KEYWORD,jlu
 DOMAIN-KEYWORD,jdyy
+DOMAIN-SUFFIX,jlu.edu.cn
 
 # IP段匹配
 IP-CIDR,219.146.1.66/32,no-resolve
