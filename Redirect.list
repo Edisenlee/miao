@@ -1,4 +1,17 @@
 # 内容：自定义的需要代理的网站
+#GEOSITE
+GEOSITE,openai
+GEOSITE,anthropic
+GEOSITE,google
+GEOSITE,youtube
+GEOSITE,facebook
+GEOSITE,nexon
+GEOSITE,twitter
+GEOSITE,github
+GEOSITE,telegram
+GEOSITE,netflix
+GEOSITE,poe
+
 # 域名关键字匹配
 DOMAIN-KEYWORD,github
 DOMAIN-KEYWORD,google
