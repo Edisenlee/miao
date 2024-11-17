@@ -11,6 +11,8 @@ GEOSITE,github
 GEOSITE,telegram
 GEOSITE,netflix
 GEOSITE,poe
+GEOSITE,x
+GEOSITE,xai
 
 # 域名关键字匹配
 DOMAIN-KEYWORD,github
