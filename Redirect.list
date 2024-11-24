@@ -13,11 +13,13 @@ GEOSITE,netflix
 GEOSITE,poe
 GEOSITE,x
 GEOSITE,xai
+DOMAIN,cdn.usefathom.com
 
 # 域名关键字匹配
 DOMAIN-KEYWORD,github
 DOMAIN-KEYWORD,google
 DOMAIN-KEYWORD,anthropic
+DOMAIN-KEYWORD,claude
 DOMAIN-KEYWORD,deepl
 DOMAIN-KEYWORD,cloudflare
 DOMAIN-KEYWORD,youtube
