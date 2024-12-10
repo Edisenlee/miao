@@ -19,6 +19,8 @@ DOMAIN,cdn.usefathom.com
 DOMAIN,o33249.ingest.sentry.io
 DOMAIN,openaiapi-site.azureedge.net
 DOMAIN,production-openaicom-storage.azureedge.net
+DOMAIN,files.anthropic.com
+DOMAIN,prod.files.anthropic.com
 
 # 域名关键字匹配
 DOMAIN-KEYWORD,anthropic
@@ -115,3 +117,23 @@ DOMAIN-SUFFIX,ws-production.anthropic.com
 DOMAIN-SUFFIX,ws.openai.com
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,youtube.com
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,api.anthropic.com
+DOMAIN-SUFFIX,cdn.anthropic.com
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claude.google.com
+DOMAIN-SUFFIX,claude-faq.anthropic.com
+DOMAIN-SUFFIX,console.anthropic.com
+DOMAIN-SUFFIX,docs.anthropic.com
+DOMAIN-SUFFIX,files.anthropic.com
+DOMAIN-SUFFIX,help.anthropic.com
+DOMAIN-SUFFIX,hooks.anthropic.com
+DOMAIN-SUFFIX,logging.anthropic.com
+DOMAIN-SUFFIX,mail.anthropic.com
+DOMAIN-SUFFIX,newsletter.anthropic.com
+DOMAIN-SUFFIX,prod.anthropic.com
+DOMAIN-SUFFIX,research.anthropic.com
+DOMAIN-SUFFIX,status.anthropic.com
+DOMAIN-SUFFIX,support.anthropic.com
+DOMAIN-SUFFIX,wp.anthropic.com
+DOMAIN-SUFFIX,ws-production.anthropic.com
