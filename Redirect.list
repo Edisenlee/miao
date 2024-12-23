@@ -15,6 +15,7 @@ GEOSITE,xai
 GEOSITE,youtube
 
 #域名匹配
+DOMAIN,poe.com
 DOMAIN,cdn.usefathom.com
 DOMAIN,o33249.ingest.sentry.io
 DOMAIN,openaiapi-site.azureedge.net
@@ -27,6 +28,7 @@ DOMAIN-KEYWORD,anthropic
 DOMAIN-KEYWORD,chatgpt
 DOMAIN-KEYWORD,claude
 DOMAIN-KEYWORD,cloudflare
+DOMAIN-KEYWORD,poe
 DOMAIN-KEYWORD,cohere
 DOMAIN-KEYWORD,deepl
 DOMAIN-KEYWORD,deepmind
@@ -47,6 +49,7 @@ DOMAIN-KEYWORD,youtube
 DOMAIN-KEYWORD,ytimg
 
 # 域名后缀匹配
+DOMAIN-SUFFIX,poe.com
 DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,api.anthropic.com
