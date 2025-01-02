@@ -1,5 +1,4 @@
-# 内容：自定义的需要代理的网站
-#GEOSITE
+# GEOSITE规则
 GEOSITE,anthropic
 GEOSITE,facebook
 GEOSITE,github
@@ -14,11 +13,7 @@ GEOSITE,x
 GEOSITE,xai
 GEOSITE,youtube
 
-#域名匹配
-DOMAIN,poe.com
-DOMAIN,googleusercontent.com
-DOMAIN,docker.internal
-DOMAIN,amazonaws.com
+# 域名匹配
 DOMAIN,cdn.usefathom.com
 DOMAIN,o33249.ingest.sentry.io
 DOMAIN,openaiapi-site.azureedge.net
@@ -52,8 +47,8 @@ DOMAIN-KEYWORD,youtube
 DOMAIN-KEYWORD,ytimg
 
 # 域名后缀匹配
-DOMAIN-SUFFIX,poe.com
 DOMAIN-SUFFIX,ai.com
+DOMAIN-SUFFIX,amazonaws.com
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,api.anthropic.com
 DOMAIN-SUFFIX,api.groq.com
@@ -69,13 +64,14 @@ DOMAIN-SUFFIX,challenges.cloudflare.com
 DOMAIN-SUFFIX,chat.openai.com
 DOMAIN-SUFFIX,chat.x.ai
 DOMAIN-SUFFIX,chatgpt.com
-DOMAIN-SUFFIX,claude-faq.anthropic.com
 DOMAIN-SUFFIX,claude.ai
-DOMAIN-SUFFIX,claude.ai.com
+DOMAIN-SUFFIX,claude.google.com
+DOMAIN-SUFFIX,claude-faq.anthropic.com
 DOMAIN-SUFFIX,client-api.arkoselabs.com
 DOMAIN-SUFFIX,cloudflare.com
 DOMAIN-SUFFIX,cloudflareinsights.com
 DOMAIN-SUFFIX,cohere.ai
+DOMAIN-SUFFIX,console.anthropic.com
 DOMAIN-SUFFIX,console.x.ai
 DOMAIN-SUFFIX,dashboard.x.ai
 DOMAIN-SUFFIX,deepl.com
@@ -84,6 +80,8 @@ DOMAIN-SUFFIX,discord.gg
 DOMAIN-SUFFIX,discord.media
 DOMAIN-SUFFIX,discordapp.com
 DOMAIN-SUFFIX,discordapp.net
+DOMAIN-SUFFIX,docs.anthropic.com
+DOMAIN-SUFFIX,docker.internal
 DOMAIN-SUFFIX,events.statsigapi.net
 DOMAIN-SUFFIX,featuregates.org
 DOMAIN-SUFFIX,gemini.google.com
@@ -91,64 +89,60 @@ DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-SUFFIX,github.com
 DOMAIN-SUFFIX,google.com
 DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,googleusercontent.com
 DOMAIN-SUFFIX,groq.com
 DOMAIN-SUFFIX,grok.x.ai
 DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,hcaptcha.com
+DOMAIN-SUFFIX,help.anthropic.com
+DOMAIN-SUFFIX,hooks.anthropic.com
 DOMAIN-SUFFIX,identrust.com
 DOMAIN-SUFFIX,intercom.io
 DOMAIN-SUFFIX,intercomassets.com
 DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,logging.anthropic.com
+DOMAIN-SUFFIX,mail.anthropic.com
 DOMAIN-SUFFIX,makersuite.google.com
 DOMAIN-SUFFIX,midjourney.com
+DOMAIN-SUFFIX,newsletter.anthropic.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,openaiapi-site.azureedge.net
 DOMAIN-SUFFIX,perplexity.ai
 DOMAIN-SUFFIX,platform.openai.com
+DOMAIN-SUFFIX,poe.com
+DOMAIN-SUFFIX,prod.anthropic.com
 DOMAIN-SUFFIX,recaptcha.net
 DOMAIN-SUFFIX,replicate.ai
 DOMAIN-SUFFIX,replicate.com
+DOMAIN-SUFFIX,research.anthropic.com
 DOMAIN-SUFFIX,runwayml.com
 DOMAIN-SUFFIX,segment.io
 DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,stability.ai
 DOMAIN-SUFFIX,stabilityai.com
 DOMAIN-SUFFIX,statsig.com
+DOMAIN-SUFFIX,status.anthropic.com
 DOMAIN-SUFFIX,stripe.com
 DOMAIN-SUFFIX,stripe.network
 DOMAIN-SUFFIX,stripecdn.com
+DOMAIN-SUFFIX,support.anthropic.com
+DOMAIN-SUFFIX,wp.anthropic.com
 DOMAIN-SUFFIX,ws-production.anthropic.com
 DOMAIN-SUFFIX,ws.openai.com
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,youtube.com
-DOMAIN-SUFFIX,anthropic.com
-DOMAIN-SUFFIX,api.anthropic.com
-DOMAIN-SUFFIX,cdn.anthropic.com
-DOMAIN-SUFFIX,claude.ai
-DOMAIN-SUFFIX,claude.google.com
-DOMAIN-SUFFIX,claude-faq.anthropic.com
-DOMAIN-SUFFIX,console.anthropic.com
-DOMAIN-SUFFIX,docs.anthropic.com
-DOMAIN-SUFFIX,files.anthropic.com
-DOMAIN-SUFFIX,help.anthropic.com
-DOMAIN-SUFFIX,hooks.anthropic.com
-DOMAIN-SUFFIX,logging.anthropic.com
-DOMAIN-SUFFIX,mail.anthropic.com
-DOMAIN-SUFFIX,newsletter.anthropic.com
-DOMAIN-SUFFIX,prod.anthropic.com
-DOMAIN-SUFFIX,research.anthropic.com
-DOMAIN-SUFFIX,status.anthropic.com
-DOMAIN-SUFFIX,support.anthropic.com
-DOMAIN-SUFFIX,wp.anthropic.com
-DOMAIN-SUFFIX,ws-production.anthropic.com
 
-# IP段匹配
-IP-CIDR,160.79.0.0/16,no-resolve
+# IP-CIDR规则
 IP-CIDR,13.107.0.0/16,no-resolve
-IP-CIDR,35.168.0.0/13,no-resolve
+IP-CIDR,18.204.0.0/14,no-resolve
+IP-CIDR,23.227.38.0/24,no-resolve
+IP-CIDR,3.233.156.0/24,no-resolve
 IP-CIDR,34.32.0.0/11,no-resolve
-
-
-
+IP-CIDR,35.168.0.0/13,no-resolve
+IP-CIDR,104.18.0.0/16,no-resolve
+IP-CIDR,104.244.0.0/16,no-resolve
+IP-CIDR,160.79.0.0/16,no-resolve
+IP-CIDR,173.252.0.0/16,no-resolve
+IP-CIDR,199.16.0.0/16,no-resolve
