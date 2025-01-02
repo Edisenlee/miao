@@ -143,3 +143,11 @@ DOMAIN-SUFFIX,status.anthropic.com
 DOMAIN-SUFFIX,support.anthropic.com
 DOMAIN-SUFFIX,wp.anthropic.com
 DOMAIN-SUFFIX,ws-production.anthropic.com
+
+# IP段匹配
+IP-CIDR,160.79.104.10,no-resolve
+IP-CIDR,13.107.27.200,no-resolve
+IP-CIDR,35.174.127.31,no-resolve
+
+
+
