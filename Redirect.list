@@ -16,6 +16,9 @@ GEOSITE,youtube
 
 #域名匹配
 DOMAIN,poe.com
+DOMAIN,googleusercontent.com
+DOMAIN,docker.internal
+DOMAIN,amazonaws.com
 DOMAIN,cdn.usefathom.com
 DOMAIN,o33249.ingest.sentry.io
 DOMAIN,openaiapi-site.azureedge.net
