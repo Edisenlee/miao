@@ -45,6 +45,7 @@ DOMAIN-KEYWORD,stability
 DOMAIN-KEYWORD,x.ai
 DOMAIN-KEYWORD,youtube
 DOMAIN-KEYWORD,ytimg
+DOMAIN-KEYWORD,msu
 
 # 域名后缀匹配
 DOMAIN-SUFFIX,ai.com
@@ -133,6 +134,7 @@ DOMAIN-SUFFIX,ws-production.anthropic.com
 DOMAIN-SUFFIX,ws.openai.com
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,youtube.com
+DOMAIN-SUFFIX,msu.io
 
 # IP-CIDR规则
 IP-CIDR,13.107.0.0/16,no-resolve
