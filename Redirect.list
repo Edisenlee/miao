@@ -20,6 +20,13 @@ DOMAIN,openaiapi-site.azureedge.net
 DOMAIN,production-openaicom-storage.azureedge.net
 DOMAIN,files.anthropic.com
 DOMAIN,prod.files.anthropic.com
+DOMAIN,claudeusercontent.com
+DOMAIN,claudemcpclient.com
+DOMAIN,servd-anthropic-website.b-cdn.net
+DOMAIN,claude-logs-production.anthropic.com
+DOMAIN,claude-logs-prod.anthropic.com
+DOMAIN,telemetry.anthropic.com
+DOMAIN,telemetry.claude.ai
 
 # 域名关键字匹配
 DOMAIN-KEYWORD,anthropic
@@ -67,9 +74,6 @@ DOMAIN-SUFFIX,chat.x.ai
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claude.com
-DOMAIN,claudeusercontent.com
-DOMAIN,claudemcpclient.com
-DOMAIN,servd-anthropic-website.b-cdn.net
 DOMAIN-SUFFIX,claude.google.com
 DOMAIN-SUFFIX,claude-faq.anthropic.com
 DOMAIN-SUFFIX,client-api.arkoselabs.com
@@ -139,6 +143,18 @@ DOMAIN-SUFFIX,ws.openai.com
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,youtube.com
 DOMAIN-SUFFIX,msu.io
+DOMAIN-SUFFIX,workos.com
+DOMAIN-SUFFIX,workos-production.com
+DOMAIN-SUFFIX,launchdarkly.com
+DOMAIN-SUFFIX,ld.lldns.net
+DOMAIN-SUFFIX,app.launchdarkly.com
+DOMAIN-SUFFIX,clientstream.launchdarkly.com
+DOMAIN-SUFFIX,events.launchdarkly.com
+DOMAIN-SUFFIX,checkout.stripe.com
+DOMAIN-SUFFIX,invoice.stripe.com
+DOMAIN-SUFFIX,js.stripe.com
+DOMAIN-SUFFIX,browser-intake-datadoghq.com
+DOMAIN-SUFFIX,session-replay-datadoghq.com
 
 # IP-CIDR规则
 IP-CIDR,13.107.0.0/16,no-resolve
