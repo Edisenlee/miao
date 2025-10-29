@@ -155,6 +155,39 @@ DOMAIN-SUFFIX,invoice.stripe.com
 DOMAIN-SUFFIX,js.stripe.com
 DOMAIN-SUFFIX,browser-intake-datadoghq.com
 DOMAIN-SUFFIX,session-replay-datadoghq.com
+DOMAIN-SUFFIX,fastly.net
+DOMAIN-SUFFIX,fastlylb.net
+DOMAIN-SUFFIX,cloudfront.net
+DOMAIN-SUFFIX,googletagmanager.com
+DOMAIN-SUFFIX,google-analytics.com
+DOMAIN-SUFFIX,mixpanel.com
+DOMAIN-SUFFIX,amplitude.com
+DOMAIN-SUFFIX,vercel.app
+DOMAIN-SUFFIX,vercel.com
+DOMAIN-SUFFIX,releases.anthropic.com
+DOMAIN-SUFFIX,updates.anthropic.com
+DOMAIN-SUFFIX,desktop.anthropic.com
+DOMAIN-SUFFIX,app-updates.anthropic.com
+DOMAIN-SUFFIX,github.githubassets.com
+DOMAIN-SUFFIX,objects.githubusercontent.com
+DOMAIN-SUFFIX,github-releases.githubusercontent.com
+DOMAIN-SUFFIX,codeload.github.com
+
+# Cloudflare Challenge 完整覆盖
+DOMAIN-SUFFIX,cf-challenge.com
+DOMAIN-SUFFIX,cloudflare-dns.com
+DOMAIN-SUFFIX,cloudflareclient.com
+DOMAIN-SUFFIX,cloudflaressl.com
+DOMAIN-SUFFIX,cloudflarestatus.com
+DOMAIN-SUFFIX,one.one.one.one
+DOMAIN,js.hcaptcha.com
+DOMAIN,imgs.hcaptcha.com
+DOMAIN,api.hcaptcha.com
+DOMAIN,api2.hcaptcha.com
+
+# Turnstile (Cloudflare新的验证系统)
+DOMAIN-SUFFIX,turnstile.com
+DOMAIN-SUFFIX,challenges.cloudflare.com
 
 # IP-CIDR规则
 IP-CIDR,13.107.0.0/16,no-resolve
