@@ -230,6 +230,7 @@ DOMAIN-SUFFIX,statsig.com
 DOMAIN-SUFFIX,events.statsigapi.net
 DOMAIN-SUFFIX,featuregates.org
 DOMAIN-SUFFIX,segment.io
+DOMAIN-SUFFIX,segment.com
 DOMAIN-SUFFIX,mixpanel.com
 DOMAIN-SUFFIX,amplitude.com
 DOMAIN,cdn.usefathom.com
