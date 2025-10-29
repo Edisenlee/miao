@@ -66,6 +66,10 @@ DOMAIN-SUFFIX,chat.openai.com
 DOMAIN-SUFFIX,chat.x.ai
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claude.com
+DOMAIN,claudeusercontent.com
+DOMAIN,claudemcpclient.com
+DOMAIN,servd-anthropic-website.b-cdn.net
 DOMAIN-SUFFIX,claude.google.com
 DOMAIN-SUFFIX,claude-faq.anthropic.com
 DOMAIN-SUFFIX,client-api.arkoselabs.com
