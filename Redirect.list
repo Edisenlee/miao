@@ -1,42 +1,113 @@
 # ===================================================================
-#  AI / PROXY RULESET - OPTIMIZED (Clash Format)
-#  基于用户规则 + OverseasAI 合并优化
-#  原则：精确 DOMAIN > DOMAIN-SUFFIX > GEOSITE > KEYWORD > IP-ASN/CIDR
-#  更新：2025-01-25
+#  AI / PROXY RULESET - V2 COMPLETE (Clash Format)
+#  基于深度研究报告全面更新，重点覆盖 ChatGPT 和 Claude
+#  原则：精确 DOMAIN > DOMAIN-SUFFIX > GEOSITE > KEYWORD > IP
+#  更新：2025-01-25 v2
 # ===================================================================
 
 
 # =====================================================
-# [1] 精确 DOMAIN（API / 核心端点 / WebSocket / CDN）
+# [1] 精确 DOMAIN（API / 核心端点 / 关键服务）
 #     —— 最高优先级，确保关键服务稳定
 # =====================================================
 
-# ---------- OpenAI / ChatGPT ----------
+# ==========================================================
+#                    OpenAI / ChatGPT
+# ==========================================================
+
+# ---------- 核心 API ----------
 DOMAIN,api.openai.com
 DOMAIN,platform.openai.com
+DOMAIN,platform.api.openai.com
+DOMAIN,chat.openai.com
+DOMAIN,chatgpt.com
+DOMAIN,chat.com
+
+# ---------- 认证 ----------
 DOMAIN,auth.openai.com
 DOMAIN,auth0.openai.com
-DOMAIN,cdn.openai.com
+DOMAIN,accounts.openai.com
+
+# ---------- 桌面/移动应用 ----------
+DOMAIN,desktop.chat.openai.com
+DOMAIN,ios.chat.openai.com
+DOMAIN,android.chat.openai.com
+DOMAIN,apps.openai.com
+
+# ---------- 文件/上传 ----------
 DOMAIN,files.openai.com
 DOMAIN,uploads.openai.com
-DOMAIN,chat.openai.com
+DOMAIN,files.oaiusercontent.com
+
+# ---------- CDN ----------
+DOMAIN,cdn.openai.com
+DOMAIN,cdn.oaistatic.com
 DOMAIN,chat.openai.com.cdn.cloudflare.net
+DOMAIN,openaicom.imgix.net
+
+# ---------- Azure 基础设施 ----------
 DOMAIN,openai-api.arkoselabs.com
 DOMAIN,openaiapi-site.azureedge.net
 DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
 DOMAIN,openaicomproductionae4b.blob.core.windows.net
 DOMAIN,production-openaicom-storage.azureedge.net
 
-# ---------- Anthropic / Claude ----------
+# ---------- 支付/帮助/状态 ----------
+DOMAIN,pay.openai.com
+DOMAIN,help.openai.com
+DOMAIN,status.openai.com
+DOMAIN,community.openai.com
+
+# ---------- 新功能 (2024-2025) ----------
+DOMAIN,ab.chatgpt.com
+DOMAIN,operator.chatgpt.com
+
+# ---------- 语音功能 (LiveKit) ----------
+DOMAIN,chatgpt.livekit.cloud
+
+
+# ==========================================================
+#                    Anthropic / Claude
+# ==========================================================
+
+# ---------- 核心 API ----------
 DOMAIN,api.anthropic.com
+DOMAIN,a-api.anthropic.com
 DOMAIN,api-preview.anthropic.com
+DOMAIN,api.console.anthropic.com
+
+# ---------- 控制台/平台 ----------
 DOMAIN,console.anthropic.com
+DOMAIN,platform.claude.com
+
+# ---------- 文档/帮助 ----------
+DOMAIN,docs.anthropic.com
+DOMAIN,docs.claude.com
+DOMAIN,code.claude.com
+DOMAIN,support.anthropic.com
+DOMAIN,support.claude.com
+
+# ---------- 文件服务 ----------
 DOMAIN,files.anthropic.com
 DOMAIN,prod.files.anthropic.com
+
+# ---------- WebSocket ----------
 DOMAIN,ws-production.anthropic.com
+
+# ---------- CDN ----------
+DOMAIN,a-cdn.anthropic.com
+DOMAIN,s-cdn.anthropic.com
+DOMAIN,www-cdn.anthropic.com
 DOMAIN,servd-anthropic-website.b-cdn.net
 
-# ---------- Google AI / Gemini ----------
+# ---------- 遥测 ----------
+DOMAIN,statsig.anthropic.com
+
+
+# ==========================================================
+#                    Google AI / Gemini
+# ==========================================================
+
 DOMAIN,ai.google.dev
 DOMAIN,aistudio.google.com
 DOMAIN,makersuite.google.com
@@ -44,7 +115,11 @@ DOMAIN,generativelanguage.googleapis.com
 DOMAIN,notebooklm.google.com
 DOMAIN,alkalimakersuite-pa.clients6.google.com
 
-# ---------- Microsoft / Copilot ----------
+
+# ==========================================================
+#                    Microsoft / Copilot
+# ==========================================================
+
 DOMAIN,copilot.microsoft.com
 DOMAIN,sydney.bing.com
 DOMAIN,www.bing.com
@@ -59,26 +134,54 @@ DOMAIN,location.microsoft.com
 DOMAIN,odc.officeapps.live.com
 DOMAIN,self.events.data.microsoft.com
 
-# ---------- GitHub Copilot / IDE ----------
+
+# ==========================================================
+#                    GitHub Copilot / IDE
+# ==========================================================
+
 DOMAIN,api.githubcopilot.com
 DOMAIN,copilot-proxy.githubusercontent.com
 DOMAIN,marketplace.visualstudio.com
 DOMAIN,code.visualstudio.com
 
-# ---------- NVIDIA AI ----------
+
+# ==========================================================
+#                    NVIDIA AI
+# ==========================================================
+
 DOMAIN,api.ngc.nvidia.com
 DOMAIN,api.nvidia.com
 DOMAIN,build.nvidia.com
 DOMAIN,integrate.api.nvidia.com
 
-# ---------- 监控 / 统计 ----------
+
+# ==========================================================
+#                    人机验证服务
+# ==========================================================
+
+DOMAIN,client-api.arkoselabs.com
+DOMAIN,openai-api.arkoselabs.com
+DOMAIN,funcaptcha.com
+DOMAIN,challenges.cloudflare.com
+
+
+# ==========================================================
+#                    监控 / 统计
+# ==========================================================
+
 DOMAIN,api.statsig.com
 DOMAIN,cdn.usefathom.com
 DOMAIN,browser-intake-datadoghq.com
 DOMAIN,in.appcenter.ms
 DOMAIN,static.cloudflareinsights.com
+DOMAIN,o33249.ingest.sentry.io
+DOMAIN,featureassets.org
 
-# ---------- Stripe 支付核心 ----------
+
+# ==========================================================
+#                    Stripe 支付核心
+# ==========================================================
+
 DOMAIN,api.stripe.com
 DOMAIN,checkout.stripe.com
 DOMAIN,invoice.stripe.com
@@ -91,9 +194,10 @@ DOMAIN,dashboard.stripe.com
 # [2] DOMAIN-SUFFIX（平台主体 + 生态服务）
 # =====================================================
 
-# ==================== AI 服务平台 ====================
+# ==========================================================
+#                    OpenAI / ChatGPT / Sora
+# ==========================================================
 
-# ---------- OpenAI / ChatGPT / Sora ----------
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,oaistatic.com
@@ -103,13 +207,26 @@ DOMAIN-SUFFIX,sora.com
 DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,chatgpt.livekit.cloud
 
-# ---------- Anthropic / Claude ----------
+# ---------- Azure OpenAI ----------
+DOMAIN-SUFFIX,openai.azure.com
+DOMAIN-SUFFIX,services.ai.azure.com
+DOMAIN-SUFFIX,cognitiveservices.azure.com
+
+
+# ==========================================================
+#                    Anthropic / Claude (全覆盖)
+# ==========================================================
+
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claude.com
 DOMAIN-SUFFIX,claudeusercontent.com
 
-# ---------- Google 全量（AI + 常规服务）----------
+
+# ==========================================================
+#                    Google 全量
+# ==========================================================
+
 DOMAIN-SUFFIX,google.com
 DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,googleusercontent.com
@@ -128,7 +245,11 @@ DOMAIN-SUFFIX,business.gemini.google
 DOMAIN-SUFFIX,aiplatform.googleapis.com
 DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
 
-# ---------- Microsoft / Azure AI ----------
+
+# ==========================================================
+#                    Microsoft / Azure AI
+# ==========================================================
+
 DOMAIN-SUFFIX,microsoft.com
 DOMAIN-SUFFIX,microsoftonline.com
 DOMAIN-SUFFIX,live.com
@@ -138,87 +259,172 @@ DOMAIN-SUFFIX,msn.com
 DOMAIN-SUFFIX,bing.com
 DOMAIN-SUFFIX,copilot.microsoft.com
 DOMAIN-SUFFIX,copilot.cloud.microsoft
-DOMAIN-SUFFIX,openai.azure.com
-DOMAIN-SUFFIX,cognitiveservices.azure.com
 DOMAIN-SUFFIX,api.microsoftapp.net
 DOMAIN-SUFFIX,edgeservices.bing.com
 DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io
+DOMAIN-SUFFIX,webpubsub.azure.com
 
-# ---------- xAI / Grok ----------
+
+# ==========================================================
+#                    xAI / Grok
+# ==========================================================
+
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,grok.com
 
-# ---------- Meta AI ----------
+
+# ==========================================================
+#                    Meta AI
+# ==========================================================
+
 DOMAIN-SUFFIX,meta.ai
 
-# ---------- Perplexity ----------
+
+# ==========================================================
+#                    Perplexity
+# ==========================================================
+
 DOMAIN-SUFFIX,perplexity.ai
 DOMAIN-SUFFIX,perplexity.com
 DOMAIN-SUFFIX,pplx.ai
 
-# ---------- Poe ----------
+
+# ==========================================================
+#                    Poe
+# ==========================================================
+
 DOMAIN-SUFFIX,poe.com
 DOMAIN-SUFFIX,qpoe.com
 
-# ---------- Mistral ----------
+
+# ==========================================================
+#                    Mistral
+# ==========================================================
+
 DOMAIN-SUFFIX,mistral.ai
 
-# ---------- Groq ----------
+
+# ==========================================================
+#                    Groq
+# ==========================================================
+
 DOMAIN-SUFFIX,groq.com
 
-# ---------- Cohere ----------
+
+# ==========================================================
+#                    Cohere
+# ==========================================================
+
 DOMAIN-SUFFIX,cohere.ai
 DOMAIN-SUFFIX,cohere.com
 
-# ---------- Together AI ----------
+
+# ==========================================================
+#                    Together AI
+# ==========================================================
+
 DOMAIN-SUFFIX,together.ai
 DOMAIN-SUFFIX,together.xyz
 
-# ---------- Fireworks AI ----------
+
+# ==========================================================
+#                    Fireworks AI
+# ==========================================================
+
 DOMAIN-SUFFIX,fireworks.ai
 
-# ---------- DeepInfra ----------
+
+# ==========================================================
+#                    DeepInfra
+# ==========================================================
+
 DOMAIN-SUFFIX,deepinfra.com
 
-# ---------- Cerebras ----------
+
+# ==========================================================
+#                    Cerebras
+# ==========================================================
+
 DOMAIN-SUFFIX,cerebras.ai
 
-# ---------- Lambda ----------
+
+# ==========================================================
+#                    Lambda
+# ==========================================================
+
 DOMAIN-SUFFIX,lambda.ai
 
-# ---------- Inflection / Pi ----------
+
+# ==========================================================
+#                    Inflection / Pi
+# ==========================================================
+
 DOMAIN-SUFFIX,inflection.ai
 DOMAIN-SUFFIX,pi.ai
 
-# ---------- Character AI ----------
+
+# ==========================================================
+#                    Character AI
+# ==========================================================
+
 DOMAIN-SUFFIX,character.ai
 
-# ---------- Reka ----------
+
+# ==========================================================
+#                    Reka
+# ==========================================================
+
 DOMAIN-SUFFIX,reka.ai
 
-# ---------- AI21 Labs ----------
+
+# ==========================================================
+#                    AI21 Labs
+# ==========================================================
+
 DOMAIN-SUFFIX,ai21.com
 DOMAIN-SUFFIX,ai21labs.com
 
-# ---------- You.com ----------
+
+# ==========================================================
+#                    You.com
+# ==========================================================
+
 DOMAIN-SUFFIX,you.com
 
-# ---------- Phind ----------
+
+# ==========================================================
+#                    Phind
+# ==========================================================
+
 DOMAIN-SUFFIX,phind.com
 
-# ---------- Exa ----------
+
+# ==========================================================
+#                    Exa
+# ==========================================================
+
 DOMAIN-SUFFIX,exa.ai
 
-# ---------- Manus AI ----------
+
+# ==========================================================
+#                    Manus AI
+# ==========================================================
+
 DOMAIN-SUFFIX,manus.ai
 DOMAIN-SUFFIX,manus.im
 DOMAIN-SUFFIX,manuscdn.com
 
-# ---------- OpenRouter ----------
+
+# ==========================================================
+#                    OpenRouter
+# ==========================================================
+
 DOMAIN-SUFFIX,openrouter.ai
 
 
-# ==================== 图像 / 视频 / 音频 AI ====================
+# ==========================================================
+#                    图像 / 视频 / 音频 AI
+# ==========================================================
 
 # ---------- Midjourney ----------
 DOMAIN-SUFFIX,midjourney.com
@@ -303,7 +509,9 @@ DOMAIN-SUFFIX,remove.bg
 DOMAIN-SUFFIX,descript.com
 
 
-# ==================== 编程 / IDE / 开发工具 ====================
+# ==========================================================
+#                    编程 / IDE / 开发工具
+# ==========================================================
 
 # ---------- Cursor ----------
 DOMAIN-SUFFIX,cursor.com
@@ -366,7 +574,9 @@ DOMAIN-SUFFIX,vscode.dev
 DOMAIN-SUFFIX,grep.app
 
 
-# ==================== AI 框架 / 向量数据库 ====================
+# ==========================================================
+#                    AI 框架 / 向量数据库
+# ==========================================================
 
 # ---------- Hugging Face ----------
 DOMAIN-SUFFIX,huggingface.co
@@ -401,7 +611,9 @@ DOMAIN-SUFFIX,milvus.io
 DOMAIN-SUFFIX,trychroma.com
 
 
-# ==================== 写作 / 文案 / 办公 AI ====================
+# ==========================================================
+#                    写作 / 文案 / 办公 AI
+# ==========================================================
 
 # ---------- Grammarly ----------
 DOMAIN-SUFFIX,grammarly.com
@@ -446,11 +658,14 @@ DOMAIN-SUFFIX,meetgeek.ai
 DOMAIN-SUFFIX,tldv.io
 
 
-# ==================== 认证 / 登录 / OAuth ====================
+# ==========================================================
+#                    认证 / 登录 / OAuth
+# ==========================================================
 
 DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,workos.com
 DOMAIN-SUFFIX,workos-production.com
+DOMAIN-SUFFIX,workoscdn.com
 DOMAIN-SUFFIX,clerk.com
 DOMAIN-SUFFIX,clerk.dev
 DOMAIN-SUFFIX,accounts.google.com
@@ -461,10 +676,21 @@ DOMAIN-SUFFIX,login.live.com
 DOMAIN-SUFFIX,id.me
 DOMAIN-SUFFIX,identrust.com
 DOMAIN-SUFFIX,sheerid.com
-DOMAIN-SUFFIX,client-api.arkoselabs.com
 
 
-# ==================== 支付 ====================
+# ==========================================================
+#                    人机验证
+# ==========================================================
+
+DOMAIN-SUFFIX,arkoselabs.com
+DOMAIN-SUFFIX,funcaptcha.com
+DOMAIN-SUFFIX,hcaptcha.com
+DOMAIN-SUFFIX,recaptcha.net
+
+
+# ==========================================================
+#                    支付
+# ==========================================================
 
 # ---------- Stripe ----------
 DOMAIN-SUFFIX,stripe.com
@@ -497,7 +723,9 @@ DOMAIN-SUFFIX,fastspring.com
 DOMAIN-SUFFIX,checkout.com
 
 
-# ==================== CDN / 基础设施 ====================
+# ==========================================================
+#                    CDN / 基础设施
+# ==========================================================
 
 # ---------- Cloudflare ----------
 DOMAIN-SUFFIX,cloudflare.com
@@ -513,6 +741,11 @@ DOMAIN-SUFFIX,one.one.one.one
 DOMAIN-SUFFIX,amazonaws.com
 DOMAIN-SUFFIX,cloudfront.net
 
+# ---------- Azure ----------
+DOMAIN-SUFFIX,azureedge.net
+DOMAIN-SUFFIX,azurefd.net
+DOMAIN-SUFFIX,blob.core.windows.net
+
 # ---------- Fastly ----------
 DOMAIN-SUFFIX,fastly.net
 DOMAIN-SUFFIX,fastlylb.net
@@ -526,21 +759,29 @@ DOMAIN-SUFFIX,algolia.net
 
 # ---------- LiveKit ----------
 DOMAIN-SUFFIX,livekit.cloud
+DOMAIN-SUFFIX,livekit.io
 DOMAIN-SUFFIX,host.livekit.cloud
 DOMAIN-SUFFIX,turn.livekit.cloud
 
 
-# ==================== 监控 / 分析 / 功能开关 ====================
+# ==========================================================
+#                    监控 / 分析 / 功能开关
+# ==========================================================
 
 DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,statsig.com
+DOMAIN-SUFFIX,statsigapi.net
 DOMAIN-SUFFIX,events.statsigapi.net
 DOMAIN-SUFFIX,featuregates.org
+DOMAIN-SUFFIX,featureassets.org
 DOMAIN-SUFFIX,segment.io
 DOMAIN-SUFFIX,segment.com
 DOMAIN-SUFFIX,mixpanel.com
 DOMAIN-SUFFIX,amplitude.com
 DOMAIN-SUFFIX,launchdarkly.com
+DOMAIN-SUFFIX,datadoghq.com
+
+# ---------- 客服 ----------
 DOMAIN-SUFFIX,intercom.io
 DOMAIN-SUFFIX,intercomcdn.com
 DOMAIN-SUFFIX,observeit.net
@@ -579,19 +820,22 @@ DOMAIN-KEYWORD,paypal
 # [5] IP-ASN / IP-CIDR 兜底
 # =====================================================
 
-# ASN 规则（更高效覆盖）
+# ---------- ASN 规则 ----------
 IP-ASN,14061,no-resolve
 IP-ASN,20473,no-resolve
 
-# 精确 IP
+# ---------- Anthropic 自有 IP 段 ----------
+IP-CIDR,160.79.104.0/23,no-resolve
+IP-CIDR,209.249.57.0/24,no-resolve
+IP-CIDR6,2607:6bc0::/32,no-resolve
+
+# ---------- OpenAI / Azure 相关 ----------
 IP-CIDR,24.199.123.28/32,no-resolve
 IP-CIDR,64.23.132.171/32,no-resolve
-
-# OpenAI / Azure 相关
 IP-CIDR,13.107.0.0/16,no-resolve
 IP-CIDR,104.18.0.0/16,no-resolve
 
-# Cloudflare
+# ---------- Cloudflare ----------
 IP-CIDR,104.16.0.0/12,no-resolve
 IP-CIDR,172.64.0.0/13,no-resolve
 IP-CIDR,131.0.72.0/22,no-resolve
@@ -602,9 +846,11 @@ IP-CIDR,131.0.72.0/22,no-resolve
 # =====================================================
 USER-AGENT,ChatGPT*
 USER-AGENT,Claude*
+USER-AGENT,OpenAI*
+USER-AGENT,Anthropic*
 USER-AGENT,PayPal*
 
 
 # =====================================================
-# END OF RULESET
+# END OF RULESET - V2 COMPLETE
 # =====================================================
