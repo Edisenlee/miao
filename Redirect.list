@@ -1,231 +1,538 @@
-# ========== GEOSITE规则 ==========
-GEOSITE,anthropic
-GEOSITE,facebook
-GEOSITE,github
-GEOSITE,google
-GEOSITE,netflix
-GEOSITE,nexon
-GEOSITE,openai
-GEOSITE,poe
-GEOSITE,telegram
-GEOSITE,twitter
-GEOSITE,x
-GEOSITE,xai
-GEOSITE,youtube
+# ===================================================================
+#  AI / PROXY RULESET - OPTIMIZED (Clash Format)
+#  基于用户规则 + OverseasAI 合并优化
+#  原则：精确 DOMAIN > DOMAIN-SUFFIX > GEOSITE > KEYWORD > IP-ASN/CIDR
+#  更新：2025-01-25
+# ===================================================================
 
-# ========== Claude/Anthropic 专属规则 ==========
-# 核心域名
+
+# =====================================================
+# [1] 精确 DOMAIN（API / 核心端点 / WebSocket / CDN）
+#     —— 最高优先级，确保关键服务稳定
+# =====================================================
+
+# ---------- OpenAI / ChatGPT ----------
+DOMAIN,api.openai.com
+DOMAIN,platform.openai.com
+DOMAIN,auth.openai.com
+DOMAIN,auth0.openai.com
+DOMAIN,cdn.openai.com
+DOMAIN,files.openai.com
+DOMAIN,uploads.openai.com
+DOMAIN,chat.openai.com
+DOMAIN,chat.openai.com.cdn.cloudflare.net
+DOMAIN,openai-api.arkoselabs.com
+DOMAIN,openaiapi-site.azureedge.net
+DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+DOMAIN,openaicomproductionae4b.blob.core.windows.net
+DOMAIN,production-openaicom-storage.azureedge.net
+
+# ---------- Anthropic / Claude ----------
+DOMAIN,api.anthropic.com
+DOMAIN,api-preview.anthropic.com
+DOMAIN,console.anthropic.com
+DOMAIN,files.anthropic.com
+DOMAIN,prod.files.anthropic.com
+DOMAIN,ws-production.anthropic.com
+DOMAIN,servd-anthropic-website.b-cdn.net
+
+# ---------- Google AI / Gemini ----------
+DOMAIN,ai.google.dev
+DOMAIN,aistudio.google.com
+DOMAIN,makersuite.google.com
+DOMAIN,generativelanguage.googleapis.com
+DOMAIN,notebooklm.google.com
+DOMAIN,alkalimakersuite-pa.clients6.google.com
+
+# ---------- Microsoft / Copilot ----------
+DOMAIN,copilot.microsoft.com
+DOMAIN,sydney.bing.com
+DOMAIN,www.bing.com
+DOMAIN,r.bing.com
+DOMAIN,gateway.bingviz.microsoft.net
+DOMAIN,gateway.bingviz.microsoftapp.net
+DOMAIN,services.bingapis.com
+DOMAIN,management.azure.com
+DOMAIN,api.msn.com
+DOMAIN,assets.msn.com
+DOMAIN,location.microsoft.com
+DOMAIN,odc.officeapps.live.com
+DOMAIN,self.events.data.microsoft.com
+
+# ---------- GitHub Copilot / IDE ----------
+DOMAIN,api.githubcopilot.com
+DOMAIN,copilot-proxy.githubusercontent.com
+DOMAIN,marketplace.visualstudio.com
+DOMAIN,code.visualstudio.com
+
+# ---------- NVIDIA AI ----------
+DOMAIN,api.ngc.nvidia.com
+DOMAIN,api.nvidia.com
+DOMAIN,build.nvidia.com
+DOMAIN,integrate.api.nvidia.com
+
+# ---------- 监控 / 统计 ----------
+DOMAIN,api.statsig.com
+DOMAIN,cdn.usefathom.com
+DOMAIN,browser-intake-datadoghq.com
+DOMAIN,in.appcenter.ms
+DOMAIN,static.cloudflareinsights.com
+
+# ---------- Stripe 支付核心 ----------
+DOMAIN,api.stripe.com
+DOMAIN,checkout.stripe.com
+DOMAIN,invoice.stripe.com
+DOMAIN,js.stripe.com
+DOMAIN,m.stripe.com
+DOMAIN,dashboard.stripe.com
+
+
+# =====================================================
+# [2] DOMAIN-SUFFIX（平台主体 + 生态服务）
+# =====================================================
+
+# ==================== AI 服务平台 ====================
+
+# ---------- OpenAI / ChatGPT / Sora ----------
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,chatgptusercontent.com
+DOMAIN-SUFFIX,sora.com
+DOMAIN-SUFFIX,ai.com
+DOMAIN-SUFFIX,chatgpt.livekit.cloud
+
+# ---------- Anthropic / Claude ----------
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claude.com
-DOMAIN,claudeusercontent.com
-DOMAIN,claudemcpclient.com
+DOMAIN-SUFFIX,claudeusercontent.com
 
-# API和服务端点
-DOMAIN-SUFFIX,api.anthropic.com
-DOMAIN-SUFFIX,console.anthropic.com
-DOMAIN-SUFFIX,prod.anthropic.com
-DOMAIN-SUFFIX,ws-production.anthropic.com
-DOMAIN,files.anthropic.com
-DOMAIN,prod.files.anthropic.com
+# ---------- Google 全量（AI + 常规服务）----------
+DOMAIN-SUFFIX,google.com
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,googlevideo.com
+DOMAIN-SUFFIX,youtube.com
+DOMAIN-SUFFIX,ytimg.com
+DOMAIN-SUFFIX,ggpht.com
+DOMAIN-SUFFIX,gemini.google.com
+DOMAIN-SUFFIX,gemini.google
+DOMAIN-SUFFIX,bard.google.com
+DOMAIN-SUFFIX,deepmind.com
+DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,business.gemini.google
+DOMAIN-SUFFIX,aiplatform.googleapis.com
+DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
 
-# 日志和监控
-DOMAIN,claude-logs-production.anthropic.com
-DOMAIN,claude-logs-prod.anthropic.com
-DOMAIN,telemetry.anthropic.com
-DOMAIN,telemetry.claude.ai
-DOMAIN-SUFFIX,logging.anthropic.com
-DOMAIN-SUFFIX,hooks.anthropic.com
+# ---------- Microsoft / Azure AI ----------
+DOMAIN-SUFFIX,microsoft.com
+DOMAIN-SUFFIX,microsoftonline.com
+DOMAIN-SUFFIX,live.com
+DOMAIN-SUFFIX,office.com
+DOMAIN-SUFFIX,office365.com
+DOMAIN-SUFFIX,msn.com
+DOMAIN-SUFFIX,bing.com
+DOMAIN-SUFFIX,copilot.microsoft.com
+DOMAIN-SUFFIX,copilot.cloud.microsoft
+DOMAIN-SUFFIX,openai.azure.com
+DOMAIN-SUFFIX,cognitiveservices.azure.com
+DOMAIN-SUFFIX,api.microsoftapp.net
+DOMAIN-SUFFIX,edgeservices.bing.com
+DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io
 
-# 桌面应用相关
-DOMAIN-SUFFIX,releases.anthropic.com
-DOMAIN-SUFFIX,updates.anthropic.com
-DOMAIN-SUFFIX,desktop.anthropic.com
-DOMAIN-SUFFIX,app-updates.anthropic.com
+# ---------- xAI / Grok ----------
+DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,grok.com
 
-# 支持和文档
-DOMAIN-SUFFIX,docs.anthropic.com
-DOMAIN-SUFFIX,help.anthropic.com
-DOMAIN-SUFFIX,support.anthropic.com
-DOMAIN-SUFFIX,status.anthropic.com
-DOMAIN-SUFFIX,claude-faq.anthropic.com
-DOMAIN-SUFFIX,research.anthropic.com
+# ---------- Meta AI ----------
+DOMAIN-SUFFIX,meta.ai
 
-# 其他子域名
-DOMAIN-SUFFIX,mail.anthropic.com
-DOMAIN-SUFFIX,newsletter.anthropic.com
-DOMAIN-SUFFIX,wp.anthropic.com
-DOMAIN-SUFFIX,cdn.anthropic.com
+# ---------- Perplexity ----------
+DOMAIN-SUFFIX,perplexity.ai
+DOMAIN-SUFFIX,perplexity.com
+DOMAIN-SUFFIX,pplx.ai
 
-# CDN
-DOMAIN,servd-anthropic-website.b-cdn.net
+# ---------- Poe ----------
+DOMAIN-SUFFIX,poe.com
+DOMAIN-SUFFIX,qpoe.com
 
-# 关键字匹配
-DOMAIN-KEYWORD,anthropic
-DOMAIN-KEYWORD,claude
+# ---------- Mistral ----------
+DOMAIN-SUFFIX,mistral.ai
 
-# ========== Cloudflare 相关规则 ==========
-# 核心服务
+# ---------- Groq ----------
+DOMAIN-SUFFIX,groq.com
+
+# ---------- Cohere ----------
+DOMAIN-SUFFIX,cohere.ai
+DOMAIN-SUFFIX,cohere.com
+
+# ---------- Together AI ----------
+DOMAIN-SUFFIX,together.ai
+DOMAIN-SUFFIX,together.xyz
+
+# ---------- Fireworks AI ----------
+DOMAIN-SUFFIX,fireworks.ai
+
+# ---------- DeepInfra ----------
+DOMAIN-SUFFIX,deepinfra.com
+
+# ---------- Cerebras ----------
+DOMAIN-SUFFIX,cerebras.ai
+
+# ---------- Lambda ----------
+DOMAIN-SUFFIX,lambda.ai
+
+# ---------- Inflection / Pi ----------
+DOMAIN-SUFFIX,inflection.ai
+DOMAIN-SUFFIX,pi.ai
+
+# ---------- Character AI ----------
+DOMAIN-SUFFIX,character.ai
+
+# ---------- Reka ----------
+DOMAIN-SUFFIX,reka.ai
+
+# ---------- AI21 Labs ----------
+DOMAIN-SUFFIX,ai21.com
+DOMAIN-SUFFIX,ai21labs.com
+
+# ---------- You.com ----------
+DOMAIN-SUFFIX,you.com
+
+# ---------- Phind ----------
+DOMAIN-SUFFIX,phind.com
+
+# ---------- Exa ----------
+DOMAIN-SUFFIX,exa.ai
+
+# ---------- Manus AI ----------
+DOMAIN-SUFFIX,manus.ai
+DOMAIN-SUFFIX,manus.im
+DOMAIN-SUFFIX,manuscdn.com
+
+# ---------- OpenRouter ----------
+DOMAIN-SUFFIX,openrouter.ai
+
+
+# ==================== 图像 / 视频 / 音频 AI ====================
+
+# ---------- Midjourney ----------
+DOMAIN-SUFFIX,midjourney.com
+
+# ---------- Stability AI ----------
+DOMAIN-SUFFIX,stability.ai
+DOMAIN-SUFFIX,stabilityai.com
+DOMAIN-SUFFIX,dreamstudio.ai
+
+# ---------- Leonardo AI ----------
+DOMAIN-SUFFIX,leonardo.ai
+
+# ---------- Ideogram ----------
+DOMAIN-SUFFIX,ideogram.ai
+
+# ---------- Playground AI ----------
+DOMAIN-SUFFIX,playgroundai.com
+
+# ---------- Krea AI ----------
+DOMAIN-SUFFIX,krea.ai
+
+# ---------- Artbreeder ----------
+DOMAIN-SUFFIX,artbreeder.com
+
+# ---------- Civitai ----------
+DOMAIN-SUFFIX,civitai.com
+
+# ---------- Replicate ----------
+DOMAIN-SUFFIX,replicate.ai
+DOMAIN-SUFFIX,replicate.com
+
+# ---------- Fal AI ----------
+DOMAIN-SUFFIX,fal.ai
+
+# ---------- RunPod ----------
+DOMAIN-SUFFIX,runpod.io
+
+# ---------- Runway ----------
+DOMAIN-SUFFIX,runwayml.com
+
+# ---------- Pika ----------
+DOMAIN-SUFFIX,pika.art
+
+# ---------- Luma AI ----------
+DOMAIN-SUFFIX,luma.ai
+
+# ---------- Kaiber ----------
+DOMAIN-SUFFIX,kaiber.ai
+
+# ---------- ElevenLabs ----------
+DOMAIN-SUFFIX,elevenlabs.io
+DOMAIN-SUFFIX,elevenlabs.com
+
+# ---------- Suno ----------
+DOMAIN-SUFFIX,suno.ai
+
+# ---------- Udio ----------
+DOMAIN-SUFFIX,udio.com
+
+# ---------- Murf AI ----------
+DOMAIN-SUFFIX,murf.ai
+
+# ---------- Play.ht ----------
+DOMAIN-SUFFIX,play.ht
+
+# ---------- Respeecher ----------
+DOMAIN-SUFFIX,respeecher.com
+
+# ---------- Voice AI ----------
+DOMAIN-SUFFIX,voice.ai
+
+# ---------- Lovart AI ----------
+DOMAIN-SUFFIX,lovart.ai
+
+# ---------- ClipDrop ----------
+DOMAIN-SUFFIX,clipdrop.co
+
+# ---------- Remove.bg ----------
+DOMAIN-SUFFIX,remove.bg
+
+# ---------- Descript ----------
+DOMAIN-SUFFIX,descript.com
+
+
+# ==================== 编程 / IDE / 开发工具 ====================
+
+# ---------- Cursor ----------
+DOMAIN-SUFFIX,cursor.com
+DOMAIN-SUFFIX,cursor.sh
+
+# ---------- Windsurf / Codeium ----------
+DOMAIN-SUFFIX,codeium.com
+DOMAIN-SUFFIX,windsurf.ai
+DOMAIN-SUFFIX,windsurf-telemetry.codeium.com
+
+# ---------- Supermaven ----------
+DOMAIN-SUFFIX,supermaven.com
+
+# ---------- Tabnine ----------
+DOMAIN-SUFFIX,tabnine.com
+
+# ---------- GitHub Copilot ----------
+DOMAIN-SUFFIX,githubcopilot.com
+DOMAIN-SUFFIX,github.com
+DOMAIN-SUFFIX,githubusercontent.com
+DOMAIN-SUFFIX,objects.githubusercontent.com
+
+# ---------- Replit ----------
+DOMAIN-SUFFIX,replit.com
+
+# ---------- Sourcegraph ----------
+DOMAIN-SUFFIX,sourcegraph.com
+
+# ---------- Continue.dev ----------
+DOMAIN-SUFFIX,continue.dev
+
+# ---------- Augment ----------
+DOMAIN-SUFFIX,augment.dev
+DOMAIN-SUFFIX,augmentcode.com
+
+# ---------- AmpCode ----------
+DOMAIN-SUFFIX,ampcode.ai
+DOMAIN-SUFFIX,ampcode.com
+
+# ---------- OpenCode ----------
+DOMAIN-SUFFIX,opencode.ai
+DOMAIN-SUFFIX,opencode.com
+DOMAIN-SUFFIX,opencode.dev
+DOMAIN-SUFFIX,opncd.ai
+
+# ---------- Dia Browser ----------
+DOMAIN-SUFFIX,diabrowser.ai
+DOMAIN-SUFFIX,diabrowser.com
+
+# ---------- JetBrains AI ----------
+DOMAIN-SUFFIX,jetbrains.com
+DOMAIN-SUFFIX,jetbrains.ai
+DOMAIN-SUFFIX,grazie.ai
+DOMAIN-SUFFIX,grazie.aws.intellij.net
+
+# ---------- VSCode ----------
+DOMAIN-SUFFIX,vscode.dev
+
+# ---------- Grep ----------
+DOMAIN-SUFFIX,grep.app
+
+
+# ==================== AI 框架 / 向量数据库 ====================
+
+# ---------- Hugging Face ----------
+DOMAIN-SUFFIX,huggingface.co
+DOMAIN-SUFFIX,hf.co
+
+# ---------- LangChain ----------
+DOMAIN-SUFFIX,langchain.com
+DOMAIN-SUFFIX,langsmith.com
+
+# ---------- LlamaIndex ----------
+DOMAIN-SUFFIX,llamaindex.ai
+
+# ---------- Models.dev ----------
+DOMAIN-SUFFIX,models.dev
+
+# ---------- Context7 ----------
+DOMAIN-SUFFIX,context7.com
+
+# ---------- Pinecone ----------
+DOMAIN-SUFFIX,pinecone.io
+
+# ---------- Weaviate ----------
+DOMAIN-SUFFIX,weaviate.io
+
+# ---------- Qdrant ----------
+DOMAIN-SUFFIX,qdrant.tech
+
+# ---------- Milvus ----------
+DOMAIN-SUFFIX,milvus.io
+
+# ---------- Chroma ----------
+DOMAIN-SUFFIX,trychroma.com
+
+
+# ==================== 写作 / 文案 / 办公 AI ====================
+
+# ---------- Grammarly ----------
+DOMAIN-SUFFIX,grammarly.com
+
+# ---------- QuillBot ----------
+DOMAIN-SUFFIX,quillbot.com
+
+# ---------- Wordtune ----------
+DOMAIN-SUFFIX,wordtune.com
+
+# ---------- Jasper ----------
+DOMAIN-SUFFIX,jasper.ai
+
+# ---------- Copy.ai ----------
+DOMAIN-SUFFIX,copy.ai
+
+# ---------- Writesonic ----------
+DOMAIN-SUFFIX,writesonic.com
+
+# ---------- Sudowrite ----------
+DOMAIN-SUFFIX,sudowrite.com
+
+# ---------- Rytr ----------
+DOMAIN-SUFFIX,rytr.me
+
+# ---------- DeepL ----------
+DOMAIN-SUFFIX,deepl.com
+
+# ---------- Fathom (会议) ----------
+DOMAIN-SUFFIX,fathom.video
+
+# ---------- Otter AI ----------
+DOMAIN-SUFFIX,otter.ai
+
+# ---------- Fireflies ----------
+DOMAIN-SUFFIX,fireflies.ai
+
+# ---------- MeetGeek ----------
+DOMAIN-SUFFIX,meetgeek.ai
+
+# ---------- tl;dv ----------
+DOMAIN-SUFFIX,tldv.io
+
+
+# ==================== 认证 / 登录 / OAuth ====================
+
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,workos.com
+DOMAIN-SUFFIX,workos-production.com
+DOMAIN-SUFFIX,clerk.com
+DOMAIN-SUFFIX,clerk.dev
+DOMAIN-SUFFIX,accounts.google.com
+DOMAIN-SUFFIX,oauth2.googleapis.com
+DOMAIN-SUFFIX,securetoken.googleapis.com
+DOMAIN-SUFFIX,login.microsoftonline.com
+DOMAIN-SUFFIX,login.live.com
+DOMAIN-SUFFIX,id.me
+DOMAIN-SUFFIX,identrust.com
+DOMAIN-SUFFIX,sheerid.com
+DOMAIN-SUFFIX,client-api.arkoselabs.com
+
+
+# ==================== 支付 ====================
+
+# ---------- Stripe ----------
+DOMAIN-SUFFIX,stripe.com
+DOMAIN-SUFFIX,stripe.network
+DOMAIN-SUFFIX,stripecdn.com
+
+# ---------- PayPal 核心 ----------
+DOMAIN-SUFFIX,paypal.com
+DOMAIN-SUFFIX,paypal.me
+DOMAIN-SUFFIX,paypalobjects.com
+DOMAIN-SUFFIX,paypalcorp.com
+DOMAIN-SUFFIX,paypalcredit.com
+DOMAIN-SUFFIX,braintreegateway.com
+DOMAIN-SUFFIX,braintreepayments.com
+DOMAIN-SUFFIX,venmo.com
+
+# ---------- Paddle ----------
+DOMAIN-SUFFIX,paddle.com
+
+# ---------- Chargebee ----------
+DOMAIN-SUFFIX,chargebee.com
+
+# ---------- Lemon Squeezy ----------
+DOMAIN-SUFFIX,lemonsqueezy.com
+
+# ---------- FastSpring ----------
+DOMAIN-SUFFIX,fastspring.com
+
+# ---------- Checkout.com ----------
+DOMAIN-SUFFIX,checkout.com
+
+
+# ==================== CDN / 基础设施 ====================
+
+# ---------- Cloudflare ----------
 DOMAIN-SUFFIX,cloudflare.com
 DOMAIN-SUFFIX,cloudflareinsights.com
 DOMAIN-SUFFIX,cloudflaressl.com
 DOMAIN-SUFFIX,cloudflarestatus.com
 DOMAIN-SUFFIX,cloudflare-dns.com
 DOMAIN-SUFFIX,cloudflareclient.com
-
-# 人机验证
 DOMAIN-SUFFIX,challenges.cloudflare.com
-DOMAIN-SUFFIX,cf-challenge.com
-DOMAIN-SUFFIX,turnstile.com
-DOMAIN-SUFFIX,hcaptcha.com
-DOMAIN,js.hcaptcha.com
-DOMAIN,imgs.hcaptcha.com
-DOMAIN,api.hcaptcha.com
-DOMAIN,api2.hcaptcha.com
-
-# DNS
 DOMAIN-SUFFIX,one.one.one.one
 
-# 关键字
-DOMAIN-KEYWORD,cloudflare
+# ---------- AWS ----------
+DOMAIN-SUFFIX,amazonaws.com
+DOMAIN-SUFFIX,cloudfront.net
 
-# ========== OpenAI/ChatGPT 规则 ==========
-DOMAIN-SUFFIX,openai.com
-DOMAIN-SUFFIX,chatgpt.com
-DOMAIN-SUFFIX,chat.openai.com
-DOMAIN-SUFFIX,api.openai.com
-DOMAIN-SUFFIX,platform.openai.com
-DOMAIN-SUFFIX,auth0.openai.com
-DOMAIN-SUFFIX,oaistatic.com
-DOMAIN-SUFFIX,oaiusercontent.com
-DOMAIN,openaiapi-site.azureedge.net
-DOMAIN,production-openaicom-storage.azureedge.net
-DOMAIN-SUFFIX,openaiapi-site.azureedge.net
-DOMAIN-SUFFIX,ws.openai.com
-DOMAIN-KEYWORD,openai
-DOMAIN-KEYWORD,chatgpt
+# ---------- Fastly ----------
+DOMAIN-SUFFIX,fastly.net
+DOMAIN-SUFFIX,fastlylb.net
 
-# ========== Google 服务 ==========
-DOMAIN-SUFFIX,google.com
-DOMAIN-SUFFIX,googleapis.com
-DOMAIN-SUFFIX,googleusercontent.com
-DOMAIN-SUFFIX,gstatic.com
-DOMAIN-SUFFIX,apis.google.com
-DOMAIN-SUFFIX,bard.google.com
-DOMAIN-SUFFIX,gemini.google.com
-DOMAIN-SUFFIX,claude.google.com
-DOMAIN-SUFFIX,makersuite.google.com
-DOMAIN-SUFFIX,generativelanguage.googleapis.com
-DOMAIN-SUFFIX,recaptcha.net
-DOMAIN-SUFFIX,youtube.com
-DOMAIN-SUFFIX,googletagmanager.com
-DOMAIN-SUFFIX,google-analytics.com
-DOMAIN-KEYWORD,google
-DOMAIN-KEYWORD,googleapis
-DOMAIN-KEYWORD,gemini
-DOMAIN-KEYWORD,youtube
-DOMAIN-KEYWORD,ytimg
+# ---------- Vercel ----------
+DOMAIN-SUFFIX,vercel.app
+DOMAIN-SUFFIX,vercel.com
 
-# ========== X.AI/Grok 规则 ==========
-DOMAIN-SUFFIX,x.ai
-DOMAIN-SUFFIX,api.x.ai
-DOMAIN-SUFFIX,chat.x.ai
-DOMAIN-SUFFIX,grok.x.ai
-DOMAIN-SUFFIX,console.x.ai
-DOMAIN-SUFFIX,dashboard.x.ai
-DOMAIN-KEYWORD,x.ai
-DOMAIN-KEYWORD,grok
+# ---------- Algolia ----------
+DOMAIN-SUFFIX,algolia.net
 
-# ========== 其他AI服务 ==========
-# Cohere
-DOMAIN-SUFFIX,cohere.ai
-DOMAIN-KEYWORD,cohere
+# ---------- LiveKit ----------
+DOMAIN-SUFFIX,livekit.cloud
+DOMAIN-SUFFIX,host.livekit.cloud
+DOMAIN-SUFFIX,turn.livekit.cloud
 
-# Groq
-DOMAIN-SUFFIX,groq.com
-DOMAIN-SUFFIX,api.groq.com
 
-# Perplexity
-DOMAIN-SUFFIX,perplexity.ai
-DOMAIN-KEYWORD,perplexity
+# ==================== 监控 / 分析 / 功能开关 ====================
 
-# Poe
-DOMAIN-SUFFIX,poe.com
-DOMAIN-KEYWORD,poe
-
-# Midjourney
-DOMAIN-SUFFIX,midjourney.com
-DOMAIN-KEYWORD,midjourney
-
-# Stability AI
-DOMAIN-SUFFIX,stability.ai
-DOMAIN-SUFFIX,stabilityai.com
-DOMAIN-KEYWORD,stability
-
-# Replicate
-DOMAIN-SUFFIX,replicate.ai
-DOMAIN-SUFFIX,replicate.com
-DOMAIN-KEYWORD,replicate
-
-# RunwayML
-DOMAIN-SUFFIX,runwayml.com
-DOMAIN-KEYWORD,runwayml
-
-# DeepL
-DOMAIN-SUFFIX,deepl.com
-DOMAIN-KEYWORD,deepl
-DOMAIN-KEYWORD,deepmind
-
-# ========== 通讯和社交平台 ==========
-# Discord
-DOMAIN-SUFFIX,discord.com
-DOMAIN-SUFFIX,discord.gg
-DOMAIN-SUFFIX,discord.media
-DOMAIN-SUFFIX,discordapp.com
-DOMAIN-SUFFIX,discordapp.net
-DOMAIN-SUFFIX,cdn.discordapp.com
-
-# GitHub
-DOMAIN-SUFFIX,github.com
-DOMAIN-SUFFIX,github.githubassets.com
-DOMAIN-SUFFIX,objects.githubusercontent.com
-DOMAIN-SUFFIX,github-releases.githubusercontent.com
-DOMAIN-SUFFIX,codeload.github.com
-DOMAIN-KEYWORD,github
-
-# ========== 认证和支付服务 ==========
-# Auth0
-DOMAIN-SUFFIX,auth0.com
-
-# WorkOS
-DOMAIN-SUFFIX,workos.com
-DOMAIN-SUFFIX,workos-production.com
-
-# Stripe
-DOMAIN-SUFFIX,stripe.com
-DOMAIN-SUFFIX,stripe.network
-DOMAIN-SUFFIX,stripecdn.com
-DOMAIN-SUFFIX,checkout.stripe.com
-DOMAIN-SUFFIX,invoice.stripe.com
-DOMAIN-SUFFIX,js.stripe.com
-
-# ========== 监控和分析服务 ==========
-# Sentry
 DOMAIN-SUFFIX,sentry.io
-DOMAIN,o33249.ingest.sentry.io
-
-# DataDog
-DOMAIN-SUFFIX,browser-intake-datadoghq.com
-DOMAIN-SUFFIX,session-replay-datadoghq.com
-
-# LaunchDarkly
-DOMAIN-SUFFIX,launchdarkly.com
-DOMAIN-SUFFIX,ld.lldns.net
-DOMAIN-SUFFIX,app.launchdarkly.com
-DOMAIN-SUFFIX,clientstream.launchdarkly.com
-DOMAIN-SUFFIX,events.launchdarkly.com
-
-# 其他分析
 DOMAIN-SUFFIX,statsig.com
 DOMAIN-SUFFIX,events.statsigapi.net
 DOMAIN-SUFFIX,featuregates.org
@@ -233,46 +540,71 @@ DOMAIN-SUFFIX,segment.io
 DOMAIN-SUFFIX,segment.com
 DOMAIN-SUFFIX,mixpanel.com
 DOMAIN-SUFFIX,amplitude.com
-DOMAIN,cdn.usefathom.com
-
-# ========== CDN和基础设施 ==========
-DOMAIN-SUFFIX,amazonaws.com
-DOMAIN-SUFFIX,cloudfront.net
-DOMAIN-SUFFIX,fastly.net
-DOMAIN-SUFFIX,fastlylb.net
-DOMAIN-SUFFIX,vercel.app
-DOMAIN-SUFFIX,vercel.com
-
-# ========== 其他服务 ==========
-DOMAIN-SUFFIX,ai.com
+DOMAIN-SUFFIX,launchdarkly.com
 DOMAIN-SUFFIX,intercom.io
-DOMAIN-SUFFIX,intercomassets.com
 DOMAIN-SUFFIX,intercomcdn.com
-DOMAIN-SUFFIX,client-api.arkoselabs.com
-DOMAIN-SUFFIX,identrust.com
-DOMAIN-SUFFIX,docker.internal
-DOMAIN-SUFFIX,msu.io
-DOMAIN-KEYWORD,nexon
-DOMAIN-KEYWORD,msu
+DOMAIN-SUFFIX,observeit.net
+DOMAIN-SUFFIX,simility.com
 
-# ========== IP-CIDR规则 ==========
-# Microsoft/Azure
+
+# =====================================================
+# [3] GEOSITE 兜底（AI 类流量）
+# =====================================================
+GEOSITE,category-ai-!cn
+
+
+# =====================================================
+# [4] DOMAIN-KEYWORD 兜底
+# =====================================================
+DOMAIN-KEYWORD,openai
+DOMAIN-KEYWORD,chatgpt
+DOMAIN-KEYWORD,anthropic
+DOMAIN-KEYWORD,claude
+DOMAIN-KEYWORD,gemini
+DOMAIN-KEYWORD,copilot
+DOMAIN-KEYWORD,grok
+DOMAIN-KEYWORD,perplexity
+DOMAIN-KEYWORD,midjourney
+DOMAIN-KEYWORD,stability
+DOMAIN-KEYWORD,huggingface
+DOMAIN-KEYWORD,generativelanguage
+DOMAIN-KEYWORD,bedrock
+DOMAIN-KEYWORD,bedrock-runtime
+DOMAIN-KEYWORD,colab
+DOMAIN-KEYWORD,stripe
+DOMAIN-KEYWORD,paypal
+
+
+# =====================================================
+# [5] IP-ASN / IP-CIDR 兜底
+# =====================================================
+
+# ASN 规则（更高效覆盖）
+IP-ASN,14061,no-resolve
+IP-ASN,20473,no-resolve
+
+# 精确 IP
+IP-CIDR,24.199.123.28/32,no-resolve
+IP-CIDR,64.23.132.171/32,no-resolve
+
+# OpenAI / Azure 相关
 IP-CIDR,13.107.0.0/16,no-resolve
-
-# AWS
-IP-CIDR,18.204.0.0/14,no-resolve
-IP-CIDR,3.233.156.0/24,no-resolve
-IP-CIDR,35.168.0.0/13,no-resolve
-
-# Google Cloud
-IP-CIDR,34.32.0.0/11,no-resolve
+IP-CIDR,104.18.0.0/16,no-resolve
 
 # Cloudflare
-IP-CIDR,104.18.0.0/16,no-resolve
-IP-CIDR,104.244.0.0/16,no-resolve
+IP-CIDR,104.16.0.0/12,no-resolve
+IP-CIDR,172.64.0.0/13,no-resolve
+IP-CIDR,131.0.72.0/22,no-resolve
 
-# 其他
-IP-CIDR,23.227.38.0/24,no-resolve
-IP-CIDR,160.79.0.0/16,no-resolve
-IP-CIDR,173.252.0.0/16,no-resolve
-IP-CIDR,199.16.0.0/16,no-resolve
+
+# =====================================================
+# [6] USER-AGENT（可选）
+# =====================================================
+USER-AGENT,ChatGPT*
+USER-AGENT,Claude*
+USER-AGENT,PayPal*
+
+
+# =====================================================
+# END OF RULESET
+# =====================================================
