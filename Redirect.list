@@ -103,6 +103,11 @@ DOMAIN,servd-anthropic-website.b-cdn.net
 # ---------- 遥测 ----------
 DOMAIN,statsig.anthropic.com
 
+# ========== Cowork / Claude Desktop 补充 ==========
+DOMAIN-SUFFIX,gist.build
+DOMAIN,api.honeycomb.io
+DOMAIN-SUFFIX,honeycomb.io
+
 
 # ==========================================================
 #                    Google AI / Gemini
@@ -143,7 +148,7 @@ DOMAIN,api.githubcopilot.com
 DOMAIN,copilot-proxy.githubusercontent.com
 DOMAIN,marketplace.visualstudio.com
 DOMAIN,code.visualstudio.com
-
+DOMAIN-SUFFIX,githubassets.com
 
 # ==========================================================
 #                    NVIDIA AI
@@ -244,7 +249,10 @@ DOMAIN-SUFFIX,generativeai.google
 DOMAIN-SUFFIX,business.gemini.google
 DOMAIN-SUFFIX,aiplatform.googleapis.com
 DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
-
+DOMAIN-SUFFIX,gvt2.com
+DOMAIN-SUFFIX,gvt3.com
+DOMAIN-SUFFIX,googleadservices.com
+DOMAIN-SUFFIX,googletagmanager.com
 
 # ==========================================================
 #                    Microsoft / Azure AI
