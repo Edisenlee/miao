@@ -1,24 +1,52 @@
-# 直连补充列表(国内域名不解析时，防止走代理使用)
+# =============================================
+# 直连补充列表 (高优先级，确保国内/特定域名不走代理)
+# 维护者：Edison
+# 最后更新：2026-02-19
+# =============================================
 
-# MyList
-# 域名后缀匹配
+# =============================================
+# 一、局域网 & 特殊域名
+# =============================================
 DOMAIN-SUFFIX,time.windows.com
+
+# =============================================
+# 二、常用国内工具 & 网盘
+# =============================================
 DOMAIN-SUFFIX,lanzov.com
+DOMAIN-SUFFIX,lanzou.com
+DOMAIN-SUFFIX,lanzoui.com
+DOMAIN-SUFFIX,lanzoux.com
 DOMAIN-SUFFIX,hao123.com
 DOMAIN-SUFFIX,todesk.com
 
-DOMAIN-SUFFIX,sharepoint.com,DIRECT
+# =============================================
+# 三、学术 & 医学资源（需直连）
+# =============================================
+# BMJ 医学期刊
+DOMAIN-SUFFIX,bmj.com
 
-# 域名关键字匹配
-DOMAIN-KEYWORD,baidu
-DOMAIN-KEYWORD,todesk
-DOMAIN-KEYWORD,bmj
-DOMAIN-KEYWORD,tencent
-DOMAIN-KEYWORD,ftp
-DOMAIN-KEYWORD,ebi
-DOMAIN-KEYWORD,todesk
+# EMBL-EBI 生物信息学
+DOMAIN-SUFFIX,ebi.ac.uk
 
-#GEOSITE
+# CNKI 知网
+DOMAIN-SUFFIX,cnki.net
+
+# 吉林大学 & 校园网
+DOMAIN-KEYWORD,jlu
+DOMAIN-KEYWORD,jdyy
+DOMAIN-SUFFIX,jlu.edu.cn
+DOMAIN-SUFFIX,vpn.jlu.edu.cn
+
+# =============================================
+# 四、微软服务（直连部分）
+# =============================================
+DOMAIN-SUFFIX,sharepoint.com
+
+# =============================================
+# 五、GEOSITE 国内大站集合
+# =============================================
+# 注意：myrules.ini 兜底已有 ChinaDomain/ChinaIp/GEOIP,CN
+# 此处保留是为了最高优先级确保这些域名直连（DNS 解析阶段即生效）
 GEOSITE,cn
 GEOSITE,bilibili
 GEOSITE,baidu
@@ -43,13 +71,10 @@ GEOSITE,sina
 GEOSITE,sohu
 GEOSITE,sogou
 GEOSITE,ximalaya
-GEOSITE,tencent
 
-
-# IP段匹配
-IP-CIDR,219.146.1.66/32,no-resolve
-
-# 国内DNS
+# =============================================
+# 六、国内 DNS 服务器 IP
+# =============================================
 DOMAIN-SUFFIX,dns.alidns.com
 DOMAIN-SUFFIX,doh.pub
 IP-CIDR,219.146.1.66/32,no-resolve
@@ -61,14 +86,10 @@ IP-CIDR,180.76.76.76/32,no-resolve
 IP-CIDR,114.114.114.114/32,no-resolve
 IP-CIDR,114.114.115.115/32,no-resolve
 
-#edu
-DOMAIN-KEYWORD,jlu
-DOMAIN-KEYWORD,jdyy
-DOMAIN-SUFFIX,jlu.edu.cn
-DOMAIN-SUFFIX,vpn.jlu.edu.cn
-
-
-# LeTV 乐视
+# =============================================
+# 七、国内视频 & 媒体
+# =============================================
+# 乐视 LeTV
 DOMAIN-SUFFIX,le.com
 DOMAIN-SUFFIX,lecloud.com
 DOMAIN-SUFFIX,letv.com
@@ -77,30 +98,23 @@ DOMAIN-SUFFIX,letvimg.com
 DOMAIN-SUFFIX,letvlive.com
 DOMAIN-SUFFIX,letvstore.com
 
-# MGTV 芒果TV
+# 芒果TV
 DOMAIN-SUFFIX,hitv.com
 DOMAIN-SUFFIX,hunantv.com
 DOMAIN-SUFFIX,mgtv.com
 
-# Sony
-DOMAIN-SUFFIX,playstation.com
-DOMAIN-SUFFIX,playstation.net
-DOMAIN-SUFFIX,playstationnetwork.com
-DOMAIN-SUFFIX,sony.com
-DOMAIN-SUFFIX,sonyentertainmentnetwork.com
-
-# Public Direct CDN 公共直连
-#DOMAIN-SUFFIX,ajax.aspnetcdn.com
-#DOMAIN-SUFFIX,ajax.cloudflare.com
-#DOMAIN-SUFFIX,cdnjs.cloudflare.com
-#DOMAIN-SUFFIX,code.jquery.com
+# =============================================
+# 八、公共 CDN 直连
+# =============================================
 DOMAIN-SUFFIX,baomitu.com
 DOMAIN-SUFFIX,bootcss.com
 DOMAIN-SUFFIX,jiasule.com
 DOMAIN-SUFFIX,staticfile.org
 DOMAIN-SUFFIX,upaiyun.com
 
-# AccelerateDirectSites
+# =============================================
+# 九、国内常用网站（按首字母排序）
+# =============================================
 DOMAIN-SUFFIX,10010.com
 DOMAIN-SUFFIX,115.com
 DOMAIN-SUFFIX,12306.com
@@ -116,7 +130,6 @@ DOMAIN-SUFFIX,51jobcdn.com
 DOMAIN-SUFFIX,56.com
 DOMAIN-SUFFIX,8686c.com
 DOMAIN-SUFFIX,abchina.com
-DOMAIN-SUFFIX,abercrombie.com
 DOMAIN-SUFFIX,acfun.tv
 DOMAIN-SUFFIX,air-matters.com
 DOMAIN-SUFFIX,air-matters.io
@@ -146,7 +159,6 @@ DOMAIN-SUFFIX,clouddn.com
 DOMAIN-SUFFIX,cloudxns.net
 DOMAIN-SUFFIX,cn163.net
 DOMAIN-SUFFIX,cnblogs.com
-DOMAIN-SUFFIX,cnki.net
 DOMAIN-SUFFIX,cnmstl.net
 DOMAIN-SUFFIX,coolapk.com
 DOMAIN-SUFFIX,coolapkmarket.com
@@ -186,7 +198,6 @@ DOMAIN-SUFFIX,gwdang.com
 DOMAIN-SUFFIX,gzlzfm.com
 DOMAIN-SUFFIX,haibian.com
 DOMAIN-SUFFIX,haosou.com
-DOMAIN-SUFFIX,hollisterco.com
 DOMAIN-SUFFIX,hongxiu.com
 DOMAIN-SUFFIX,huajiao.com
 DOMAIN-SUFFIX,hupu.com
@@ -194,7 +205,6 @@ DOMAIN-SUFFIX,huxiucdn.com
 DOMAIN-SUFFIX,huya.com
 DOMAIN-SUFFIX,ifeng.com
 DOMAIN-SUFFIX,ifengimg.com
-DOMAIN-SUFFIX,images-amazon.com
 DOMAIN-SUFFIX,infzm.com
 DOMAIN-SUFFIX,ipip.net
 DOMAIN-SUFFIX,it168.com
@@ -215,9 +225,6 @@ DOMAIN-SUFFIX,kuaidi100.com
 DOMAIN-SUFFIX,kugou.com
 DOMAIN-SUFFIX,lancdns.com
 DOMAIN-SUFFIX,landiannews.com
-DOMAIN-SUFFIX,lanzou.com
-DOMAIN-SUFFIX,lanzoui.com
-DOMAIN-SUFFIX,lanzoux.com
 DOMAIN-SUFFIX,lemicp.com
 DOMAIN-SUFFIX,letitfly.me
 DOMAIN-SUFFIX,lizhi.fm
@@ -247,7 +254,6 @@ DOMAIN-SUFFIX,nuomi.com
 DOMAIN-SUFFIX,onedns.net
 DOMAIN-SUFFIX,oneplus.com
 DOMAIN-SUFFIX,onlinedown.net
-DOMAIN-SUFFIX,oracle.com
 DOMAIN-SUFFIX,oschina.net
 DOMAIN-SUFFIX,ourdvs.com
 DOMAIN-SUFFIX,polyv.net
@@ -281,9 +287,7 @@ DOMAIN-SUFFIX,smzdm.com
 DOMAIN-SUFFIX,snwx.com
 DOMAIN-SUFFIX,soufunimg.com
 DOMAIN-SUFFIX,sspai.com
-DOMAIN-SUFFIX,startssl.com
 DOMAIN-SUFFIX,suning.com
-DOMAIN-SUFFIX,synology.com
 DOMAIN-SUFFIX,taihe.com
 DOMAIN-SUFFIX,th-sjy.com
 DOMAIN-SUFFIX,tianqi.com
@@ -304,7 +308,6 @@ DOMAIN-SUFFIX,uxengine.net
 DOMAIN-SUFFIX,videocc.net
 DOMAIN-SUFFIX,vivo.com
 DOMAIN-SUFFIX,wandoujia.com
-DOMAIN-SUFFIX,weather.com
 DOMAIN-SUFFIX,weico.cc
 DOMAIN-SUFFIX,weidian.com
 DOMAIN-SUFFIX,weiphone.com
@@ -342,3 +345,23 @@ DOMAIN-SUFFIX,zhimg.com
 DOMAIN-SUFFIX,zhipin.com
 DOMAIN-SUFFIX,zhongsou.com
 DOMAIN-SUFFIX,zhuihd.com
+
+# =============================================
+# 已移除说明（供参考）
+# =============================================
+# [已移除] DOMAIN-SUFFIX,sharepoint.com,DIRECT → 去掉了末尾 ,DIRECT（规则集不带策略）
+# [已移除] DOMAIN-KEYWORD,todesk（重复）→ 保留 DOMAIN-SUFFIX,todesk.com
+# [已移除] DOMAIN-KEYWORD,baidu → 已被 GEOSITE,baidu 覆盖
+# [已移除] DOMAIN-KEYWORD,tencent → 已被 GEOSITE,tencent 覆盖
+# [已移除] DOMAIN-KEYWORD,ftp → 匹配范围过广，易误杀
+# [已移除] DOMAIN-KEYWORD,bmj → 改为 DOMAIN-SUFFIX,bmj.com（精确匹配）
+# [已移除] DOMAIN-KEYWORD,ebi → 改为 DOMAIN-SUFFIX,ebi.ac.uk（精确匹配）
+# [已移除] IP-CIDR,219.146.1.66/32（重复）→ 保留一条
+# [已移除] Sony/PlayStation 域名 → 交给 myrules.ini 的 🎮 国外游戏 分组处理
+# [已移除] oracle.com → 美国站点，不宜强制直连
+# [已移除] synology.com → 国外站点，直连可能慢
+# [已移除] weather.com → The Weather Channel（美国），非中国天气网
+# [已移除] images-amazon.com → Amazon CDN，国内需代理
+# [已移除] startssl.com → 已停止服务
+# [已移除] abercrombie.com → 美国品牌，不需直连
+# [已移除] hollisterco.com → 美国品牌，不需直连
