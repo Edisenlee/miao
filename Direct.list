@@ -13,7 +13,7 @@ DOMAIN-SUFFIX,sharepoint.com,DIRECT
 DOMAIN-KEYWORD,baidu
 DOMAIN-KEYWORD,todesk
 DOMAIN-KEYWORD,bmj
-DOMAIN-KEYWORD,tecent
+DOMAIN-KEYWORD,tencent
 DOMAIN-KEYWORD,ftp
 DOMAIN-KEYWORD,ebi
 DOMAIN-KEYWORD,todesk
@@ -22,7 +22,7 @@ DOMAIN-KEYWORD,todesk
 GEOSITE,cn
 GEOSITE,bilibili
 GEOSITE,baidu
-GEOSITE,tecent
+GEOSITE,tencent
 GEOSITE,qihoo360
 GEOSITE,58tongcheng
 GEOSITE,alibaba
@@ -43,7 +43,7 @@ GEOSITE,sina
 GEOSITE,sohu
 GEOSITE,sogou
 GEOSITE,ximalaya
-GEOSITE,tecent
+GEOSITE,tencent
 
 
 # IP段匹配
