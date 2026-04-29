@@ -81,33 +81,55 @@ DOMAIN,api.anthropic.com
 DOMAIN,a-api.anthropic.com
 DOMAIN,api-preview.anthropic.com
 DOMAIN,api.console.anthropic.com
-
 # ---------- 控制台/平台 ----------
 DOMAIN,console.anthropic.com
 DOMAIN,platform.claude.com
-
 # ---------- 文档/帮助 ----------
 DOMAIN,docs.anthropic.com
 DOMAIN,docs.claude.com
 DOMAIN,code.claude.com
 DOMAIN,support.anthropic.com
 DOMAIN,support.claude.com
-
 # ---------- 文件服务 ----------
 DOMAIN,files.anthropic.com
 DOMAIN,prod.files.anthropic.com
-
 # ---------- WebSocket ----------
 DOMAIN,ws-production.anthropic.com
-
 # ---------- CDN ----------
 DOMAIN,a-cdn.anthropic.com
 DOMAIN,s-cdn.anthropic.com
 DOMAIN,www-cdn.anthropic.com
 DOMAIN,servd-anthropic-website.b-cdn.net
-
-# ---------- 遥测 ----------
+DOMAIN,anthropic.com.cdn.cloudflare.net
+# ---------- 认证 ----------
+DOMAIN,anthropic.auth0.com
+# ---------- CMS / 博客 ----------
+DOMAIN,anthropic-com.ghost.io
+# ---------- 遥测 / 监控 ----------
 DOMAIN,statsig.anthropic.com
+DOMAIN,cdn.usefathom.com
+DOMAIN,browser-intake-us5-datadoghq.com
+# ---------- 后缀匹配 ----------
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claude.com
+DOMAIN-SUFFIX,clau.de
+DOMAIN-SUFFIX,claudemcpclient.com
+DOMAIN-SUFFIX,claudeusercontent.com
+# ---------- Cowork / Claude Desktop ----------
+DOMAIN-SUFFIX,gist.build
+DOMAIN-SUFFIX,honeycomb.io
+# ---------- 第三方依赖（体验完整性） ----------
+DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,statsigapi.net
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-KEYWORD,datadog
+DOMAIN-KEYWORD,sift
+# ---------- IP ----------
+IP-CIDR,160.79.104.0/21,no-resolve
+IP-CIDR6,2607:6bc0::/32,no-resolve
+IP-ASN,399358,no-resolve
 
 # ==========================================================
 # Google AI 专属端点（不含 google.com 主域名）
@@ -448,7 +470,8 @@ DOMAIN-SUFFIX,tldv.io
 # [3] GEOSITE 兜底
 # =====================================================
 GEOSITE,category-ai-!cn
-
+GEOSITE,anthropic
+GEOSITE,category-ntp
 
 # =====================================================
 # [4] DOMAIN-KEYWORD 兜底（仅保留高精确度关键词）
