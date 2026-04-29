@@ -125,6 +125,7 @@ DOMAIN-SUFFIX,statsigapi.net
 DOMAIN-SUFFIX,intercom.io
 DOMAIN-SUFFIX,intercomcdn.com
 DOMAIN-KEYWORD,datadog
+DOMAIN-KEYWORD,sentry
 DOMAIN-KEYWORD,sift
 # ---------- IP ----------
 IP-CIDR,160.79.104.0/21,no-resolve
