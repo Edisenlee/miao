@@ -1,7 +1,7 @@
 # ===================================================================
 # AI / PROXY RULESET - V3 CLEAN (Clash Format)
 # 原则：只包含纯 AI 服务域名，不侵入其他代理分组
-# 更新：2026-02-19 v3
+# 更新：2026-10-14 v4 Claude privacy-first maintenance; other service sections preserved
 # ===================================================================
 
 # =====================================================
@@ -74,60 +74,63 @@ DOMAIN,operator.chatgpt.com
 DOMAIN,chatgpt.livekit.cloud
 
 # ==========================================================
-# Anthropic / Claude
+# Anthropic / Claude (maintained 2026-10-14; same entries as Claude.list)
 # ==========================================================
-# ---------- 核心 API ----------
-DOMAIN,api.anthropic.com
-DOMAIN,a-api.anthropic.com
-DOMAIN,api-preview.anthropic.com
-DOMAIN,api.console.anthropic.com
-# ---------- 控制台/平台 ----------
-DOMAIN,console.anthropic.com
-DOMAIN,platform.claude.com
-# ---------- 文档/帮助 ----------
-DOMAIN,docs.anthropic.com
-DOMAIN,docs.claude.com
-DOMAIN,code.claude.com
-DOMAIN,support.anthropic.com
-DOMAIN,support.claude.com
-# ---------- 文件服务 ----------
-DOMAIN,files.anthropic.com
-DOMAIN,prod.files.anthropic.com
-# ---------- WebSocket ----------
-DOMAIN,ws-production.anthropic.com
-# ---------- CDN ----------
-DOMAIN,a-cdn.anthropic.com
-DOMAIN,s-cdn.anthropic.com
-DOMAIN,www-cdn.anthropic.com
-DOMAIN,servd-anthropic-website.b-cdn.net
-DOMAIN,anthropic.com.cdn.cloudflare.net
-# ---------- 认证 ----------
-DOMAIN,anthropic.auth0.com
-# ---------- CMS / 博客 ----------
-DOMAIN,anthropic-com.ghost.io
-# ---------- 遥测 / 监控 ----------
-DOMAIN,statsig.anthropic.com
-DOMAIN,cdn.usefathom.com
-DOMAIN,browser-intake-us5-datadoghq.com
-# ---------- 后缀匹配 ----------
+# Anthropic / Claude routing rules
+# Updated: 2026-10-14
+# Policy: prefer extra proxy coverage over exposing a native client IP.
+# Official endpoints: https://code.claude.com/docs/en/network-config
+# Official inbound IPs: https://platform.claude.com/docs/en/api/ip-addresses
+# Domain baseline: v2fly/domain-list-community data/anthropic, 2c892a618f4e
+# Proxy routing only. Never bind this list to DIRECT or a direct fallback.
+
+# Owned domains (API, OAuth, downloads, MCP, artifacts and user content)
 DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,clau.de
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claude.com
-DOMAIN-SUFFIX,clau.de
+DOMAIN-SUFFIX,claude.dev
 DOMAIN-SUFFIX,claudemcpclient.com
+DOMAIN-SUFFIX,claudemcpcontent.com
 DOMAIN-SUFFIX,claudeusercontent.com
-# ---------- Cowork / Claude Desktop ----------
+
+# Exact dependencies and package distribution hosts
+DOMAIN,servd-anthropic-website.b-cdn.net
+DOMAIN,anthropic.com.cdn.cloudflare.net
+DOMAIN,anthropic.auth0.com
+DOMAIN,anthropic-com.ghost.io
+DOMAIN,cdn.usefathom.com
+DOMAIN,browser-intake-us5-datadoghq.com
+DOMAIN,challenges.cloudflare.com
+DOMAIN,cdn.growthbook.io
+DOMAIN,storage.googleapis.com
+DOMAIN,registry.npmjs.org
+
+# Shared dependencies: intentionally also proxies unrelated app traffic
 DOMAIN-SUFFIX,gist.build
 DOMAIN-SUFFIX,honeycomb.io
-# ---------- 第三方依赖（体验完整性） ----------
 DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,statsigapi.net
 DOMAIN-SUFFIX,intercom.io
 DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,statsig.com
+DOMAIN-SUFFIX,featuregates.org
+DOMAIN-SUFFIX,featureassets.org
+
+# Conservative name coverage; false positives are intentionally proxied
+DOMAIN-KEYWORD,claude
+DOMAIN-KEYWORD,anthropic
 DOMAIN-KEYWORD,datadog
 DOMAIN-KEYWORD,sentry
 DOMAIN-KEYWORD,sift
-# ---------- IP ----------
+
+# Official service inbound destination ranges
+IP-CIDR,160.79.104.0/23,no-resolve
+IP-CIDR6,2607:6bc0::/48,no-resolve
+
+# Additional protection inherited from broad community rules.
+# IPv4 /21 is official OUTBOUND infrastructure; IPv6 /32 is broader than the official inbound /48.
+# These and ASN coverage are extra proxy matches, not official inbound declarations.
 IP-CIDR,160.79.104.0/21,no-resolve
 IP-CIDR6,2607:6bc0::/32,no-resolve
 IP-ASN,399358,no-resolve
@@ -192,18 +195,6 @@ DOMAIN-SUFFIX,chatgpt.livekit.cloud
 DOMAIN-SUFFIX,openai.azure.com
 DOMAIN-SUFFIX,services.ai.azure.com
 DOMAIN-SUFFIX,cognitiveservices.azure.com
-
-# ==========================================================
-# Anthropic / Claude（全覆盖）
-# ==========================================================
-DOMAIN-SUFFIX,anthropic.com
-DOMAIN-SUFFIX,claude.ai
-DOMAIN-SUFFIX,claude.com
-DOMAIN-SUFFIX,claudeusercontent.com
-
-# ---------- Cowork / Claude Desktop ----------
-DOMAIN-SUFFIX,gist.build
-DOMAIN-SUFFIX,honeycomb.io
 
 # ==========================================================
 # Google AI 专属（不含 google.com 等主域名）
@@ -479,7 +470,6 @@ GEOSITE,category-ntp
 # =====================================================
 DOMAIN-KEYWORD,openai
 DOMAIN-KEYWORD,chatgpt
-DOMAIN-KEYWORD,anthropic
 DOMAIN-KEYWORD,midjourney
 DOMAIN-KEYWORD,huggingface
 
@@ -487,10 +477,6 @@ DOMAIN-KEYWORD,huggingface
 # =====================================================
 # [5] IP-CIDR（仅 Anthropic 官方自有 IP）
 # =====================================================
-# Anthropic 官方公布 (docs.anthropic.com/en/api/ip-addresses)
-# /21 覆盖全部入站 + 出站流量
-IP-CIDR,160.79.104.0/21,no-resolve
-IP-CIDR6,2607:6bc0::/48,no-resolve
 
 # OpenAI 专属 IP
 IP-CIDR,24.199.123.28/32,no-resolve
@@ -501,9 +487,7 @@ IP-CIDR,64.23.132.171/32,no-resolve
 # [6] USER-AGENT
 # =====================================================
 USER-AGENT,ChatGPT*
-USER-AGENT,Claude*
 USER-AGENT,OpenAI*
-USER-AGENT,Anthropic*
 
 
 # =====================================================
@@ -566,8 +550,8 @@ USER-AGENT,Anthropic*
 #   PayPal*
 #
 # [IP 修正]
-#   Anthropic: /23 → /21（覆盖全部出入站）
-#   IPv6: /32 → /48（与官方文档一致）
+#   Anthropic inbound IPv4 is /23. /21 is retained as additional proxy protection only.
+#   IPv6 inbound is /48. Broader /32 and ASN protection are intentionally retained.
 # =====================================================
 # END OF RULESET - V3 CLEAN
 # =====================================================
