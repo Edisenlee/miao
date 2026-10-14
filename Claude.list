@@ -1,0 +1,58 @@
+# Anthropic / Claude routing rules
+# Updated: 2026-10-14
+# Policy: prefer extra proxy coverage over exposing a native client IP.
+# Official endpoints: https://code.claude.com/docs/en/network-config
+# Official inbound IPs: https://platform.claude.com/docs/en/api/ip-addresses
+# Domain baseline: v2fly/domain-list-community data/anthropic, 2c892a618f4e
+# Proxy routing only. Never bind this list to DIRECT or a direct fallback.
+
+# Owned domains (API, OAuth, downloads, MCP, artifacts and user content)
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,clau.de
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claude.com
+DOMAIN-SUFFIX,claude.dev
+DOMAIN-SUFFIX,claudemcpclient.com
+DOMAIN-SUFFIX,claudemcpcontent.com
+DOMAIN-SUFFIX,claudeusercontent.com
+
+# Exact dependencies and package distribution hosts
+DOMAIN,servd-anthropic-website.b-cdn.net
+DOMAIN,anthropic.com.cdn.cloudflare.net
+DOMAIN,anthropic.auth0.com
+DOMAIN,anthropic-com.ghost.io
+DOMAIN,cdn.usefathom.com
+DOMAIN,browser-intake-us5-datadoghq.com
+DOMAIN,challenges.cloudflare.com
+DOMAIN,cdn.growthbook.io
+DOMAIN,storage.googleapis.com
+DOMAIN,registry.npmjs.org
+
+# Shared dependencies: intentionally also proxies unrelated app traffic
+DOMAIN-SUFFIX,gist.build
+DOMAIN-SUFFIX,honeycomb.io
+DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,statsigapi.net
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,statsig.com
+DOMAIN-SUFFIX,featuregates.org
+DOMAIN-SUFFIX,featureassets.org
+
+# Conservative name coverage; false positives are intentionally proxied
+DOMAIN-KEYWORD,claude
+DOMAIN-KEYWORD,anthropic
+DOMAIN-KEYWORD,datadog
+DOMAIN-KEYWORD,sentry
+DOMAIN-KEYWORD,sift
+
+# Official service inbound destination ranges
+IP-CIDR,160.79.104.0/23,no-resolve
+IP-CIDR6,2607:6bc0::/48,no-resolve
+
+# Additional protection inherited from broad community rules.
+# IPv4 /21 is official OUTBOUND infrastructure; IPv6 /32 is broader than the official inbound /48.
+# These and ASN coverage are extra proxy matches, not official inbound declarations.
+IP-CIDR,160.79.104.0/21,no-resolve
+IP-CIDR6,2607:6bc0::/32,no-resolve
+IP-ASN,399358,no-resolve
